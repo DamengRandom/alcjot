@@ -1,6 +1,6 @@
-# Idon't 🥐🥐
+# Alcjot 🍺🍺
 
-A tiny project for free date ~~
+A jot for recording some alcohol I have seen ..
 
 <!-- References -->
 
