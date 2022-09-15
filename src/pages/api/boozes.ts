@@ -18,7 +18,7 @@ interface Booze {
   price: string;
   feel: string;
   description: string;
-  // image: Buffer;
+  image: string;
 }
 
 const boozeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -29,6 +29,7 @@ const boozeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     switch (method) {
       case 'POST':
+        body.time = new Date().toISOString();
         booze = await DrinkCollection.create(body as Booze);
 
         if (!booze)

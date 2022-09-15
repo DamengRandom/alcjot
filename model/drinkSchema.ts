@@ -46,12 +46,11 @@ const drinkSchema = new mongoose.Schema({
     required: true,
     unqiue: true,
   },
-  // image: {
-  //   data: Buffer,
-  //   contentType: String,
-  //   required: false,
-  //   unqiue: false,
-  // },
+  image: {
+    type: String,
+    required: true,
+    unqiue: true,
+  },
 });
 
 const DrinkModel = mongoose.model('DrinkModel', drinkSchema);
