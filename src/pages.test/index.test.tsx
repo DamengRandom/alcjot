@@ -7,10 +7,18 @@ import Index from '@/pages/index';
 
 describe('Index page', () => {
   describe('Render method', () => {
-    it('should have hi text', () => {
+    it('should have Alcjot text', () => {
       render(<Index />);
 
-      const heading = screen.getByText(/Hi/);
+      const heading = screen.getByText(/Alcjot/);
+
+      expect(heading).toBeInTheDocument();
+    });
+
+    it('should have Damengrandom text', () => {
+      render(<Index />);
+
+      const heading = screen.getByText(/Damengrandom/);
 
       expect(heading).toBeInTheDocument();
     });

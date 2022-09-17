@@ -16,7 +16,10 @@ A jot for recording some alcohol I have seen ..
 9. https://dribbble.com/shots/19387252-Vicodrive-logo-design
 10. https://food.ltn.com.tw/article/8313#:~:text=%E8%87%B3%E6%96%BC%E5%85%AD%E5%A4%A7%E5%9F%BA%E9%85%92,%EF%BC%89%EF%BC%8C%E4%B8%8B%E9%9D%A2%E4%B8%80%E4%B8%80%E4%BB%8B%E7%B4%B9%E3%80%82
 11. https://tailwindcss.com/docs/grid-template-columns
-12. 
+12. https://www.youtube.com/watch?v=V-VXTashnE4
+13. https://vercel.com/guides/how-can-i-use-github-actions-with-vercel
+14. https://stackoverflow.com/questions/62750603/github-actions-trigger-another-action-after-one-action-is-completed
+15. 
  -->
  
 <!-- My thoughts -->
