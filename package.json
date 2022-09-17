@@ -11,7 +11,7 @@
     "clean": "rimraf .next out",
     "lint": "next lint",
     "check-types": "tsc --noEmit --pretty",
-    "test": "jest --ci --forceExit --detectOpenHandles --maxWorkers=2 --no-cache --all --bail --watchAll=false --verbase",
+    "test": "jest --ci --forceExit --detectOpenHandles --maxWorkers=2 --no-cache --all --bail --watchAll=false --verbose --runInBand",
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
     "e2e": "start-server-and-test dev http://localhost:6677 cypress",
