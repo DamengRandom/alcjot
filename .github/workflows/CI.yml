@@ -15,6 +15,10 @@ jobs:
         run: |
           echo "Installing Dependencies"
           npm install
+      - name: Build Alcjot ⚙️⚙️
+        run: |
+          echo "Building Alcjot now .."
+          npm run build
       - name: Run Linting
         run: |
           echo "Running Linting Tests .."
