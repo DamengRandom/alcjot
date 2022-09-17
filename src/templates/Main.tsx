@@ -11,7 +11,7 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <main className="grid h-screen w-screen grid-rows-2 md:grid-cols-2">
+  <main className="grid h-screen w-screen grid-rows-[3fr_2fr] md:grid-cols-[3fr_2fr]">
     {props.meta}
     <section className="h-full w-full bg-sky-400 md:h-screen">
       <Alcohol />
