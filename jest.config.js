@@ -30,6 +30,7 @@ const customJestConfig = {
     },
   },
   testEnvironment: 'jest-environment-jsdom',
+  coverageReporters: ['lcov'],
 };
 
 module.exports = createJestConfig(customJestConfig);

@@ -23,17 +23,17 @@ jobs:
         run: |
           echo "Running Linting Tests .."
           npm run lint
-      - name: Running Unit Test
+      - name: Run Unit Tests
         run: |
           echo "Running Unit Tests .."
-          npm run test
           set -x
-      - name: Running E2E Tests
+          npm run test
+      - name: Run E2E Tests
         run: |
           echo "Running E2E Tests"
           npm run e2e:headless 
         env:
-          CI: false
+          CI: true
 
   deployment:
     name: Deploy to Vercel
