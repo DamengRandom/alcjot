@@ -7,7 +7,7 @@ on:
 jobs:
   lintTest:
     name: Lint
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Clone Repository
         uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "Running Unit Tests .."
           set -x
-          npm run test maxWorkers=2 --runInBand
+          npm run test
       - name: Run E2E Tests
         run: |
           echo "Running E2E Tests"
