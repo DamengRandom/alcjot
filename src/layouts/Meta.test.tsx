@@ -15,6 +15,8 @@ jest.mock(
 
 describe('Meta component', () => {
   describe('Render method', () => {
+    jest.useFakeTimers();
+
     it('should a page title', async () => {
       const title = 'Random title';
 

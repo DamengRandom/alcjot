@@ -4,6 +4,8 @@ import { Main } from './Main';
 
 describe('Main template', () => {
   describe('Render method', () => {
+    jest.useFakeTimers();
+
     it('should tru to be true', () => {
       render(<Main meta={null}>{null}</Main>);
 
