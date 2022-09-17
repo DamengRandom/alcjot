@@ -7,7 +7,7 @@ on:
 jobs:
   lintTest:
     name: Lint
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
         uses: actions/checkout@v2
