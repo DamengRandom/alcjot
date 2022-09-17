@@ -29,3 +29,8 @@ jobs:
   deployment:
     name: Deploy to Vercel
     runs-on: ubuntu-latest
+    steps:
+      - name: Go Live
+        run: |
+          echo "Go for live ~~"
+
