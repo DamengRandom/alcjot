@@ -11,13 +11,21 @@ jobs:
     steps:
       - name: Clone Repository
         uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: |
-          echo "Running Installing Dependencies .."
-          npm install
       - name: Run Linting
         run: |
           echo "Running Linting Tests .."
           npm run lint
+      - name: Running Unit Test
+        run: |
+          echo "Running Unit Tests .."
+          npm run test
+      - name: Running E2E Tests
+        run: |
+          echo "Running E2E Tests"
+          npm run e2e:headless 
         env:
           CI: true
+
+  deployment:
+    name: Deploy to Vercel
+    runs-on: ubuntu-latest
