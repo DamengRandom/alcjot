@@ -8,7 +8,7 @@ export default function Nav() {
       path: '/',
     },
     {
-      name: '+',
+      name: '(+)',
     },
   ];
   return (
