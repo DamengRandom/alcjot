@@ -4,8 +4,8 @@ import React from 'react';
 export default function Nav() {
   const navList = [
     {
-      name: 'Alcjot',
-      path: '/',
+      name: 'Services',
+      path: '/services',
     },
     {
       name: '(+)',
