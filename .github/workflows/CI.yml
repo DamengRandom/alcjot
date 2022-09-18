@@ -43,6 +43,7 @@ jobs:
     needs: lintTest
     runs-on: ubuntu-latest
     steps:
+      - name: Go Live
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
@@ -51,4 +52,4 @@ jobs:
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
-
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
