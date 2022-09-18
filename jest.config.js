@@ -23,14 +23,13 @@ const customJestConfig = {
   ],
   coverageThreshold: {
     global: {
-      branches: 1,
-      functions: 1,
-      lines: 1,
-      statements: 1,
+      branches: 5,
+      functions: 5,
+      lines: 5,
+      statements: 5,
     },
   },
   testEnvironment: 'jest-environment-jsdom',
-  // coverageReporters: ['lcov'],
 };
 
 module.exports = createJestConfig(customJestConfig);
