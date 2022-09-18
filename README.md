@@ -22,7 +22,8 @@ A jot for recording some alcohol I have seen ..
 15. https://docs.github.com/en/actions/security-guides/encrypted-secrets
 16. https://www.mongodb.com/docs/atlas/reference/partner-integrations/vercel/#accounts-in-vercel--personal-or-team-
 17. https://www.google.com/search?sxsrf=ALiCzsZXBzsHtlqHA82QhA-8dqmVCGHDDQ:1663463533097&q=FUNCTION_INVOCATION_TIMEOUT+vercel+mongodb&spell=1&sa=X&ved=2ahUKEwjNr_LHlJ36AhWxUHwKHepHBz0QBSgAegQIARA2&biw=3840&bih=2049&dpr=1
-18. 
+18. https://react-hook-form.com/get-started#IntegratingwithUIlibraries
+19. 
  -->
  
 <!-- My thoughts -->
