@@ -9,10 +9,10 @@ describe('Index page', () => {
   describe('Render method', () => {
     jest.useFakeTimers();
 
-    it('should have Alcjot text', () => {
+    it('should have based text', () => {
       render(<Index />);
 
-      const heading = screen.getByText(/Alcjot/);
+      const heading = screen.getByText(/6 based/);
 
       expect(heading).toBeInTheDocument();
     });
