@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import About from '@/components/About';
 import Alcohol from '@/components/Alcohol';
 import Footer from '@/components/Footer';
-import Nav from '@/components/Nav';
 
 type IMainProps = {
   meta: ReactNode;
@@ -16,8 +15,8 @@ const Main = (props: IMainProps) => (
     <section className="h-full w-full bg-sky-400 md:h-screen">
       <Alcohol />
     </section>
-    <section className="h-full w-full bg-gray-900 md:h-screen">
-      <Nav />
+    <section className="h-full w-full bg-slate-900 md:h-screen">
+      <button>{`(+)`}</button>
       <About />
       <Footer />
     </section>

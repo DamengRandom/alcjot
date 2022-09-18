@@ -10,7 +10,7 @@ describe('Navigation', () => {
       // The new url should include "/Services"
       cy.url().should('include', '/services');
 
-      cy.findAllByText('Services Page', { exact: false }).should(
+      cy.findAllByText('Services Main Page', { exact: false }).should(
         'have.length',
         1
       );

@@ -1,6 +1,7 @@
 @tailwind base;
 
-*, html, body, a {
+.grid.h-screen.w-screen,
+a {
   @apply text-white;
 }
 
