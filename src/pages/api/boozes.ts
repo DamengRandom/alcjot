@@ -9,9 +9,9 @@ import DrinkCollection from '../../../model/drinkSchema';
 connect(); // ensure connect to mongodb
 
 interface Booze {
-  type: string;
   time: Date;
   name: string;
+  type: string;
   from: string;
   volume: string;
   capcity: string;
@@ -30,7 +30,7 @@ const boozeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
     switch (method) {
       case 'POST':
         body.time = new Date().toISOString();
-        booze = await DrinkCollection.create(body as Booze);
+        booze = await (DrinkCollection as any).create(body as Booze);
 
         if (!booze)
           apiHandler(res, 400, {
@@ -40,7 +40,7 @@ const boozeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
         apiHandler(res, 201, booze);
         break;
       case 'GET':
-        boozes = await DrinkCollection.find();
+        boozes = await (DrinkCollection as any).find();
 
         if (!boozes)
           apiHandler(res, 400, { error: APIMessage.General_404('/boozes') });

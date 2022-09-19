@@ -46,7 +46,7 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     switch (method) {
       case 'POST':
-        passcodeObject = await PasscodeCollection.findById(id);
+        passcodeObject = await (PasscodeCollection as any).findById(id);
 
         if (passcodeObject)
           bcrypt

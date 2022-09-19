@@ -5,10 +5,6 @@ export const AppConfig = {
   locale: 'en',
 };
 
-export const sharedAPIHeaders = {
-
-};
-
 export const BoozeFields = [
   'type',
   'name',

@@ -24,6 +24,8 @@ A jot for recording some alcohol I have seen ..
 17. https://www.google.com/search?sxsrf=ALiCzsZXBzsHtlqHA82QhA-8dqmVCGHDDQ:1663463533097&q=FUNCTION_INVOCATION_TIMEOUT+vercel+mongodb&spell=1&sa=X&ved=2ahUKEwjNr_LHlJ36AhWxUHwKHepHBz0QBSgAegQIARA2&biw=3840&bih=2049&dpr=1
 18. https://react-hook-form.com/get-started#IntegratingwithUIlibraries
 19. https://codesandbox.io/s/react-hook-form-apply-validation-ts-forked-nmbyh
+20. https://stackoverflow.com/questions/19051041/cannot-overwrite-model-once-compiled-mongoose
+21. https://nextjs.org/docs/basic-features/environment-variables
  -->
  
 <!-- My thoughts -->

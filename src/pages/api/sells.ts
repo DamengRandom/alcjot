@@ -23,7 +23,7 @@ const sellHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     switch (method) {
       case 'POST':
-        product = await SellCollection.create(body as ISell);
+        product = await (SellCollection as any).create(body as ISell);
 
         if (!product)
           apiHandler(res, 400, {
@@ -33,7 +33,7 @@ const sellHandler = async (req: NextApiRequest, res: NextApiResponse) => {
         apiHandler(res, 201, product);
         break;
       case 'GET':
-        products = await SellCollection.find();
+        products = await (SellCollection as any).find();
 
         if (!products)
           apiHandler(res, 400, {
