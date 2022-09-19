@@ -11,7 +11,7 @@ const Index = () => {
         />
       }
     >
-      <p>Aloha Alcjot</p>
+      <p>Alcjot - Aloha</p>
     </Main>
   );
 };

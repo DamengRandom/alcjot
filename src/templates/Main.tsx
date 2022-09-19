@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 import About from '@/components/About';
@@ -16,7 +17,7 @@ const Main = (props: IMainProps) => (
       <Alcohol />
     </section>
     <section className="h-full w-full bg-slate-900 md:h-screen">
-      <button>{`(+)`}</button>
+      <Link href="/verify">{`(+)`}</Link>
       <About />
       <Footer />
     </section>

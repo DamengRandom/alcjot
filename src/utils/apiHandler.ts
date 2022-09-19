@@ -1,6 +1,6 @@
 import type { NextApiResponse } from 'next';
 
-function errorHandler(
+function apiHandler(
   response: NextApiResponse,
   statusCode: number,
   responseJson: any
@@ -8,4 +8,4 @@ function errorHandler(
   return response.status(statusCode).json(responseJson);
 }
 
-export default errorHandler;
+export default apiHandler;

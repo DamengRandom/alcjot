@@ -2,6 +2,10 @@ import React from 'react';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 
+import fetcher from '@/utils/fetcher';
+
+import { BoozeFields } from '../utils/AppConfig';
+
 export default function Jotpad() {
   const {
     watch,
@@ -10,22 +14,7 @@ export default function Jotpad() {
     formState: { errors },
   } = useForm();
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    try {
-      await fetch(`${process.env.BASE_URL}/boozes`, {
-        method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
-        body: JSON.stringify(data),
-      });
-    } catch (error) {
-      console.error(error?.message);
-    }
+    fetcher(`${process.env.NEXT_PUBLIC_BASE_URL}/boozes`, data);
   };
 
   return (
@@ -33,16 +22,7 @@ export default function Jotpad() {
       <section>
         <h3>Booze Form</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
-          {[
-            'type',
-            'name',
-            'from',
-            'volume',
-            'capcity',
-            'feel',
-            'price',
-            'description',
-          ].map((field, index) => (
+          {BoozeFields.slice(0, -1).map((field, index) => (
             <div key={`${field}-${index}`}>
               <label>{field}: </label>
               <input
@@ -77,15 +57,13 @@ export default function Jotpad() {
           <input type="submit" />
         </form>
         <div>
-          <p>{watch('type')}</p>
-          <p>{watch('name')}</p>
-          <p>{watch('from')}</p>
-          <p>{watch('volume')}</p>
-          <p>{watch('capcity')}</p>
-          <p>{watch('feel')}</p>
-          <p>{watch('price')}</p>
-          <p>{watch('description')}</p>
-          <img src={watch('image')} alt="image" />
+          {BoozeFields.map((field) =>
+            field === 'image' ? (
+              <img src={watch('image')} alt="image" />
+            ) : (
+              <p key={field}>{watch(field)}</p>
+            )
+          )}
         </div>
       </section>
 

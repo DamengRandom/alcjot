@@ -5,6 +5,22 @@ export const AppConfig = {
   locale: 'en',
 };
 
+export const sharedAPIHeaders = {
+
+};
+
+export const BoozeFields = [
+  'type',
+  'name',
+  'from',
+  'volume',
+  'capcity',
+  'feel',
+  'price',
+  'description',
+  'image',
+];
+
 export const APIMessage = {
   Login_200: 'Welcome back ~~',
   General_400: (route: string) =>

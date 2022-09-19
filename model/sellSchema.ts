@@ -23,6 +23,8 @@ const sellSchema = new mongoose.Schema({
   },
 });
 
-const SellModel = mongoose.model('SellModel', sellSchema);
+const SellModel = mongoose.models.SellModel
+  ? mongoose.models.SellModel
+  : mongoose.model('SellModel', sellSchema);
 
 export default SellModel;

@@ -53,6 +53,8 @@ const drinkSchema = new mongoose.Schema({
   },
 });
 
-const DrinkModel = mongoose.model('DrinkModel', drinkSchema);
+const DrinkModel = mongoose.models.DrinkModel
+  ? mongoose.models.DrinkModel
+  : mongoose.model('DrinkModel', drinkSchema);
 
 export default DrinkModel;

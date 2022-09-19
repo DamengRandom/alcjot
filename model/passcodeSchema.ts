@@ -13,6 +13,8 @@ const passcodeSchema = new mongoose.Schema({
   },
 });
 
-const PasscodeModel = mongoose.model('PasscodeModel', passcodeSchema);
+const PasscodeModel = mongoose.models.PasscodeModel
+  ? mongoose.models.PasscodeModel
+  : mongoose.model('PasscodeModel', passcodeSchema);
 
 export default PasscodeModel;
