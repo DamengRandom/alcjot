@@ -1,20 +1,20 @@
 import { render, screen } from '@testing-library/react';
 
-import Services from '@/pages/services';
+import Verify from '@/pages/verify';
 
 // The easiest solution to mock `next/router`: https://github.com/vercel/next.js/issues/7479
 // The mock has been moved to `__mocks__` folder to avoid duplication
 
-describe('Services page', () => {
+describe('Verify page', () => {
   describe('Render method', () => {
     jest.useFakeTimers();
 
     it('should have based text', () => {
-      render(<Services />);
+      render(<Verify />);
 
-      const heading = screen.getByText(/Services Main/);
+      const fieldLabel = screen.getByText(/Salt/);
 
-      expect(heading).toBeInTheDocument();
+      expect(fieldLabel).toBeInTheDocument();
     });
   });
 });

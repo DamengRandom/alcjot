@@ -1,5 +1,6 @@
 import bcrypt from 'bcrypt';
 import PasscodeCollection from 'model/passcodeSchema';
+import TokenCollection from 'model/tokenSchema';
 import type { NextApiRequest, NextApiResponse } from 'next/types';
 
 import apiHandler from '@/utils/apiHandler';
@@ -43,6 +44,7 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
       method,
     } = req;
     let passcodeObject;
+    const accessToken = `${id}_${Math.random().toString(36).substr(2)}`;
 
     switch (method) {
       case 'POST':
@@ -51,11 +53,17 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
         if (passcodeObject)
           bcrypt
             .compare(passcode, (passcodeObject as IPasscode)?.passcode)
-            .then((result: boolean) =>
-              result
-                ? apiHandler(res, 200, { message: APIMessage.Login_200 })
-                : apiHandler(res, 200, { error: APIMessage.General_401 })
-            );
+            .then(async (result: boolean) => {
+              if (result) {
+                await (TokenCollection as any).create({
+                  id,
+                  token: accessToken,
+                });
+                apiHandler(res, 200, { isAuthenticated: true });
+              } else {
+                apiHandler(res, 401, { error: APIMessage.General_401 });
+              }
+            });
         break;
       default:
         apiHandler(res, 405, APIMessage.General_405(method as string));

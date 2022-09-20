@@ -1,19 +1,16 @@
 describe('Navigation', () => {
   describe('Static pages', () => {
-    it('should navigate to the services page', () => {
+    it('should navigate to the verify page', () => {
       // Start from the index page
       cy.visit('/');
 
-      // Find a link containing "Services" text and click it
-      cy.findByRole('link', { name: 'Services' }).click();
+      // Find a link containing "Alcjot" text and click it
+      cy.findByRole('link', { name: 'Alcjot' }).click();
 
-      // The new url should include "/Services"
-      cy.url().should('include', '/services');
+      // The new url should include "/Verify"
+      cy.url().should('include', '/verify');
 
-      cy.findAllByText('Services Main Page', { exact: false }).should(
-        'have.length',
-        1
-      );
+      cy.findAllByText('Salt', { exact: false }).should('have.length', 1);
     });
   });
 });

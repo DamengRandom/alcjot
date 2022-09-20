@@ -2,7 +2,7 @@ import React from 'react';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 
-import fetcher from '@/utils/fetcher';
+import { poster } from '@/utils/apiCaller';
 
 export default function Verify() {
   const {
@@ -12,7 +12,7 @@ export default function Verify() {
   } = useForm();
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    fetcher(`${process.env.NEXT_PUBLIC_BASE_URL}/verify`, data);
+    poster(`${process.env.NEXT_PUBLIC_BASE_URL}/verify`, data);
   };
 
   return (
@@ -33,9 +33,7 @@ export default function Verify() {
             required: true,
           })}
         />
-        {errors?.passcode?.type === 'required' && (
-          <p>Please enter a passcode</p>
-        )}
+        {errors?.passcode?.type === 'required' && <p>Please enter a salt</p>}
       </div>
       <input type="submit" />
     </form>

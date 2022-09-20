@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 
-import fetcher from '@/utils/fetcher';
+import { poster } from '@/utils/apiCaller';
 
-import { BoozeFields } from '../utils/AppConfig';
+import { BoozeFields, initialBoozeFieldValues } from '../utils/AppConfig';
 
 export default function Jotpad() {
   const {
+    reset,
     watch,
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitSuccessful },
   } = useForm();
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    fetcher(`${process.env.NEXT_PUBLIC_BASE_URL}/boozes`, data);
+    poster(`${process.env.NEXT_PUBLIC_BASE_URL}/boozes`, data);
   };
+
+  useEffect(() => {
+    if (isSubmitSuccessful) reset(initialBoozeFieldValues);
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <div>
@@ -43,17 +48,6 @@ export default function Jotpad() {
               )}
             </div>
           ))}
-          <div>
-            <label>image: </label>
-            <input
-              {...register('image', {
-                required: true,
-              })}
-            />
-            {errors?.image?.type === 'required' && (
-              <p>Ooops, you need to put an image url</p>
-            )}
-          </div>
           <input type="submit" />
         </form>
         <div>

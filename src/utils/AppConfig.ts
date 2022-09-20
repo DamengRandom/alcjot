@@ -17,8 +17,21 @@ export const BoozeFields = [
   'image',
 ];
 
+export const initialBoozeFieldValues = {
+  type: '',
+  name: '',
+  from: '',
+  volume: '',
+  capcity: '',
+  feel: '',
+  price: '',
+  description: '',
+  image: '',
+};
+
 export const APIMessage = {
-  Login_200: 'Welcome back ~~',
+  Delete_200: (id: string) => `${id} has been removed from database 🚀🚀`,
+  Delete_400: 'Delete failed, please try it again later ..',
   General_400: (route: string) =>
     `Ooops, bad request on ${route}, please try it again ..`,
   General_401: 'Whoops, Unable to access ..',
