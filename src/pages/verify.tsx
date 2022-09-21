@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
@@ -5,14 +6,20 @@ import { useForm } from 'react-hook-form';
 import { poster } from '@/utils/apiCaller';
 
 export default function Verify() {
+  const router = useRouter();
   const {
+    watch,
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    poster(`${process.env.NEXT_PUBLIC_BASE_URL}/verify`, data);
+    await poster(`${process.env.NEXT_PUBLIC_BASE_URL}/verify`, data);
+
+    localStorage.setItem('userId', watch('id'));
+
+    router.push('/jotpad');
   };
 
   return (

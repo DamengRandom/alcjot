@@ -1,8 +1,5 @@
 const sharedOptions = {
   mode: 'cors',
-  // cache: 'no-cache',
-  // credentials: 'same-origin',
-  // redirect: 'follow',
   referrerPolicy: 'no-referrer',
 };
 

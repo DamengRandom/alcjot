@@ -27,7 +27,8 @@ A jot for recording some alcohol I have seen ..
 20. https://stackoverflow.com/questions/19051041/cannot-overwrite-model-once-compiled-mongoose
 21. https://nextjs.org/docs/basic-features/environment-variables
 22. https://masteringjs.io/tutorials/mongoose/delete-by-id#:~:text=There%20is%20currently%20no%20method,the%20document%20will%20be%20deleted.
-23. 
+23. https://github.com/developerasun/pawcon/issues/48
+24. 
  -->
  
 <!-- My thoughts -->
