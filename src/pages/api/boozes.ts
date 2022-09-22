@@ -21,25 +21,25 @@ const boozeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
         booze = await (DrinkCollection as any).create(body as BoozeForm);
 
         if (!booze)
-          apiHandler(res, 400, {
+          return apiHandler(res, 400, {
             error: APIMessage.General_400('/boozes during creation'),
           });
 
-        apiHandler(res, 201, booze);
-        break;
+        return apiHandler(res, 201, booze);
       case 'GET':
         boozes = await (DrinkCollection as any).find();
 
         if (!boozes)
-          apiHandler(res, 400, { error: APIMessage.General_404('/boozes') });
+          return apiHandler(res, 400, {
+            error: APIMessage.General_404('/boozes'),
+          });
 
-        apiHandler(res, 200, boozes);
-        break;
+        return apiHandler(res, 200, boozes);
       default:
-        apiHandler(res, 405, APIMessage.General_405(method as string));
+        return apiHandler(res, 405, APIMessage.General_405(method as string));
     }
   } catch (error) {
-    apiHandler(res, 500, { error: (error as Error)?.message });
+    return apiHandler(res, 500, { error: (error as Error)?.message });
   }
 };
 

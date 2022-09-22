@@ -11,7 +11,10 @@ import connect from '../../../lib/mongodb';
 
 connect(); // ensure connect to mongodb
 
-const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
+const verifyHandler = async (
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<any> => {
   try {
     // Create a hashed passcode
     // const { id, passcode } = req.body;
@@ -55,7 +58,7 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
             .then(async (result: boolean) => {
               if (result) {
                 tokens = await (TokenCollection as any).find();
-                tokenObject = tokens.find((t: IToken) => t.id === id);
+                tokenObject = await tokens.find((t: IToken) => t.id === id);
 
                 if (!tokenObject) {
                   await (TokenCollection as any).create({
@@ -63,16 +66,18 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
                     token: accessToken,
                   });
                 }
-                apiHandler(res, 200, { isAuthenticated: true });
+                return apiHandler(res, 200, { isAuthenticated: true });
               }
-              apiHandler(res, 401, { error: APIMessage.General_401 });
+              return apiHandler(res, 401, { error: APIMessage.General_401 });
             });
         break;
       default:
-        apiHandler(res, 405, APIMessage.General_405(method as string));
+        return apiHandler(res, 405, APIMessage.General_405(method as string));
     }
+
+    return true;
   } catch (error) {
-    apiHandler(res, 500, { error: error?.message });
+    return apiHandler(res, 500, { error: error?.message });
   }
 };
 

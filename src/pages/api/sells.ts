@@ -20,12 +20,11 @@ const sellHandler = async (req: NextApiRequest, res: NextApiResponse) => {
         product = await (SellCollection as any).create(body as ISell);
 
         if (!product)
-          apiHandler(res, 400, {
+          return apiHandler(res, 400, {
             error: APIMessage.General_400('/sell during creation'),
           });
 
-        apiHandler(res, 201, product);
-        break;
+        return apiHandler(res, 201, product);
       case 'GET':
         products = await (SellCollection as any).find();
 
@@ -34,13 +33,12 @@ const sellHandler = async (req: NextApiRequest, res: NextApiResponse) => {
             error: APIMessage.General_404('/sell'),
           });
 
-        apiHandler(res, 200, products);
-        break;
+        return apiHandler(res, 200, products);
       default:
-        apiHandler(res, 405, APIMessage.General_405(method as string));
+        return apiHandler(res, 405, APIMessage.General_405(method as string));
     }
   } catch (error) {
-    apiHandler(res, 500, { error: error?.message });
+    return apiHandler(res, 500, { error: error?.message });
   }
 };
 
