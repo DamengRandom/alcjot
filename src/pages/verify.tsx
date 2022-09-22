@@ -69,6 +69,7 @@ export default function Verify() {
         {errors?.passcode?.type === 'required' && <p>Please enter a salt</p>}
       </div>
       {!submiting && <input type="submit" />}
+      {submiting && <p>Verifying ..</p>}
     </form>
   );
 }
