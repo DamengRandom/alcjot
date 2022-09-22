@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { AppConfig } from '@/utils/appConfig';
+import { AlcjotConfigs } from '@/utils/appConfig';
 
 export default function Footer() {
   return (
     <div className="border-t border-gray-300 py-8 text-center text-sm">
-      © Copyright {new Date().getFullYear()} {AppConfig.title}. Powered with{' '}
+      © Copyright {new Date().getFullYear()} {AlcjotConfigs.title}. Powered with{' '}
       <span role="img" aria-label="Love">
         ♥
       </span>{' '}

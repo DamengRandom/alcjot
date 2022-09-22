@@ -17,7 +17,9 @@ const Main = (props: IMainProps) => (
       <Alcohol />
     </section>
     <section className="h-full w-full bg-slate-900 md:h-screen">
-      <Link href="/verify">Alcjot</Link>
+      <div data-cy="Alcjot">
+        <Link href="/verify">Alcjot</Link>
+      </div>
       <About />
       <Footer />
     </section>

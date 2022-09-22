@@ -1,4 +1,4 @@
-export const AppConfig = {
+export const AlcjotConfigs = {
   site_name: 'alcjot',
   title: `Alcohol Jot`,
   description: 'A jot for recording some alcohol I have seen ..',

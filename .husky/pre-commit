@@ -5,11 +5,19 @@
 
 echo '🌴🌴 Linting & testing the code changes before committing 🌴🌴'
 
-# Check Eslint errors
-npm run lint:fix ||
+# Check Project Build Status
+npm run build ||
 (
     echo '❌❌❌❌ Failed Lint Check ❌❌❌❌
-        Just Fixed ✅✅✅✅'
+        To check whether the project is able to be built successful or not'
+    false;
+)
+
+# Check Eslint errors
+npm run lint ||
+(
+    echo '❌❌❌❌ Fix Failed Lints ❌❌❌❌
+        Lint errors detected ..'
     true;
 )
 

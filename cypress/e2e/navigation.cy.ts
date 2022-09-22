@@ -5,7 +5,7 @@ describe('Navigation', () => {
       cy.visit('/');
 
       // Find a link containing "Alcjot" text and click it
-      cy.findByRole('link', { name: 'Alcjot' }).click();
+      cy.get('[data-cy="Alcjot"] > a').click();
 
       // The new url should include "/Verify"
       cy.url().should('include', '/verify');
