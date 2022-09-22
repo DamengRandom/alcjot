@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AlcjotConfigs } from '@/utils/appConfig';
+import { AlcjotConfigs } from '@/utils/AppConfig';
 
 export default function Footer() {
   return (

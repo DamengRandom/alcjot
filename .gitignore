@@ -8,10 +8,6 @@
 # testing
 /coverage
 
-# cypress
-cypress/screenshots
-cypress/videos
-
 # next.js
 /.next
 /out
@@ -41,3 +37,8 @@ local
 
 # vercel
 .vercel
+
+# vscode
+.vscode/
+/.vscode
+.vscode

@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import apiHandler from '@/utils/apiHandler';
-import { APIMessage } from '@/utils/appConfig';
+import { APIMessage } from '@/utils/AppConfig';
 import type { BoozeForm } from '@/utils/appTypes';
 
 import connect from '../../../lib/mongodb';
@@ -36,9 +36,7 @@ const boozeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
         apiHandler(res, 200, boozes);
         break;
       default:
-        apiHandler(res, 405, {
-          error: APIMessage.General_405(method as string),
-        });
+        apiHandler(res, 405, APIMessage.General_405(method as string));
     }
   } catch (error) {
     apiHandler(res, 500, { error: (error as Error)?.message });

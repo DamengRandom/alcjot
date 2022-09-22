@@ -2,7 +2,7 @@ import TokenCollection from 'model/tokenSchema';
 import type { NextApiRequest, NextApiResponse } from 'next/types';
 
 import apiHandler from '@/utils/apiHandler';
-import { APIMessage } from '@/utils/appConfig';
+import { APIMessage } from '@/utils/AppConfig';
 import type { IToken } from '@/utils/appTypes';
 
 import connect from '../../../lib/mongodb';
@@ -49,9 +49,7 @@ const tokenHandler = async (req: NextApiRequest, res: NextApiResponse) => {
           });
         break;
       default:
-        apiHandler(res, 405, {
-          error: APIMessage.General_405(method as string),
-        });
+        apiHandler(res, 405, APIMessage.General_405(method as string));
     }
   } catch (error) {
     apiHandler(res, 500, { error: error?.message });

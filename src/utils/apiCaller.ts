@@ -13,14 +13,14 @@ const successResponser = async (url: string, options: any) => {
 const errorResponser = (error: Error) => {
   console.error(error?.message);
 
-  return error?.message;
+  return error;
 };
 
 const responser = async (url: string, options: any) => {
   try {
-    await successResponser(url, options);
+    return await successResponser(url, options);
   } catch (error) {
-    errorResponser(error);
+    return errorResponser(error);
   }
 };
 
@@ -34,7 +34,7 @@ async function poster(url: string, data: any) {
     body: JSON.stringify(data),
   };
 
-  await responser(url, options);
+  return responser(url, options);
 }
 
 async function getAccessToken() {

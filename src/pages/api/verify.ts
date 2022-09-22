@@ -4,7 +4,7 @@ import TokenCollection from 'model/tokenSchema';
 import type { NextApiRequest, NextApiResponse } from 'next/types';
 
 import apiHandler from '@/utils/apiHandler';
-import { APIMessage } from '@/utils/appConfig';
+import { APIMessage } from '@/utils/AppConfig';
 import type { IPasscode, IToken } from '@/utils/appTypes';
 
 import connect from '../../../lib/mongodb';
@@ -64,9 +64,8 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
                   });
                 }
                 apiHandler(res, 200, { isAuthenticated: true });
-              } else {
-                apiHandler(res, 401, { error: APIMessage.General_401 });
               }
+              apiHandler(res, 401, { error: APIMessage.General_401 });
             });
         break;
       default:

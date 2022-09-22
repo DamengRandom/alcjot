@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 
-import { AlcjotConfigs } from '@/utils/appConfig';
+import { AlcjotConfigs } from '@/utils/AppConfig';
 
 type IMetaProps = {
   title: string;

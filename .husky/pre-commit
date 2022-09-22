@@ -29,13 +29,5 @@ npm run test ||
     false;
 )
 
-# Check Cypress E2E tests errors
-npm run cypress:headless ||
-(
-    echo '❌❌❌❌ Failed Prettier Check ❌❌❌❌
-        Prettier check failed, please fix the prettier by using: npm run check-prettier'
-    false;
-)
-
 # If everything passes ... this message will be shown to you
 echo 'Well done 🚀🚀🚀🚀'

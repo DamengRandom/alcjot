@@ -8,12 +8,12 @@ import { getAccessToken, poster } from '@/utils/apiCaller';
 export default function Verify() {
   const router = useRouter();
   const [submiting, setSubmitting] = useState(false);
-
   const goToJotPad = () => {
     router.push('/jotpad');
   };
 
   const {
+    reset,
     watch,
     register,
     handleSubmit,
@@ -23,19 +23,25 @@ export default function Verify() {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setSubmitting(true);
 
-    await poster(`${process.env.NEXT_PUBLIC_BASE_URL}/verify`, data);
+    const verifyResponse = await poster(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/verify`,
+      data
+    );
 
-    localStorage.setItem('userId', watch('id'));
-
-    goToJotPad();
-
-    setSubmitting(false);
+    if (verifyResponse?.isAuthenticated) {
+      localStorage.setItem('userId', watch('id'));
+      goToJotPad();
+    } else {
+      setSubmitting(false);
+      reset({ id: '', passcode: '' });
+    }
   };
 
   const verifyHandler = async () => {
     const accessToken = await getAccessToken();
 
-    if (accessToken) goToJotPad();
+    if (accessToken?.token) goToJotPad();
+    else localStorage.removeItem('userId');
   };
 
   useEffect(() => {
@@ -62,7 +68,7 @@ export default function Verify() {
         />
         {errors?.passcode?.type === 'required' && <p>Please enter a salt</p>}
       </div>
-      <input type="submit" disabled={submiting} />
+      {!submiting && <input type="submit" />}
     </form>
   );
 }

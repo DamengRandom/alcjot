@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
@@ -5,7 +6,7 @@ import { useForm } from 'react-hook-form';
 
 import { getAccessToken, poster } from '@/utils/apiCaller';
 
-import { BoozeFields, initialBoozeFieldValues } from '../utils/appConfig';
+import { BoozeFields, initialBoozeFieldValues } from '../utils/AppConfig';
 
 export default function Jotpad() {
   const router = useRouter();
@@ -105,6 +106,9 @@ export default function Jotpad() {
       </section>
     </div>
   ) : (
-    <p>Whoops, seems like you do not have access for this page ..</p>
+    <>
+      <p>Whoops, seems like you do not have access for this page ..</p>
+      <Link href="/verify">Login now ~~</Link>
+    </>
   );
 }
