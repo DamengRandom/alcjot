@@ -2,18 +2,12 @@ import SellCollection from 'model/sellSchema';
 import type { NextApiRequest, NextApiResponse } from 'next/types';
 
 import apiHandler from '@/utils/apiHandler';
-import { APIMessage } from '@/utils/AppConfig';
+import { APIMessage } from '@/utils/appConfig';
+import type { ISell } from '@/utils/appTypes';
 
 import connect from '../../../lib/mongodb';
 
 connect(); // ensure connect to mongodb
-
-interface ISell {
-  time: string;
-  title: string;
-  quantity: string;
-  paylink: string;
-}
 
 const sellHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {

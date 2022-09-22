@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AppConfig } from '@/utils/AppConfig';
+import { AppConfig } from '@/utils/appConfig';
 
 export default function Footer() {
   return (

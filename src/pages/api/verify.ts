@@ -4,15 +4,12 @@ import TokenCollection from 'model/tokenSchema';
 import type { NextApiRequest, NextApiResponse } from 'next/types';
 
 import apiHandler from '@/utils/apiHandler';
-import { APIMessage } from '@/utils/AppConfig';
+import { APIMessage } from '@/utils/appConfig';
+import type { IPasscode, IToken } from '@/utils/appTypes';
 
 import connect from '../../../lib/mongodb';
 
 connect(); // ensure connect to mongodb
-
-interface IPasscode {
-  passcode: string;
-}
 
 const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -44,6 +41,8 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
       method,
     } = req;
     let passcodeObject;
+    let tokens;
+    let tokenObject;
     const accessToken = `${id}_${Math.random().toString(36).substr(2)}`;
 
     switch (method) {
@@ -55,10 +54,15 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
             .compare(passcode, (passcodeObject as IPasscode)?.passcode)
             .then(async (result: boolean) => {
               if (result) {
-                await (TokenCollection as any).create({
-                  id,
-                  token: accessToken,
-                });
+                tokens = await (TokenCollection as any).find();
+                tokenObject = tokens.find((t: IToken) => t.id === id);
+
+                if (!tokenObject) {
+                  await (TokenCollection as any).create({
+                    id,
+                    token: accessToken,
+                  });
+                }
                 apiHandler(res, 200, { isAuthenticated: true });
               } else {
                 apiHandler(res, 401, { error: APIMessage.General_401 });

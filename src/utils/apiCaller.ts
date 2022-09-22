@@ -37,13 +37,17 @@ async function poster(url: string, data: any) {
   await responser(url, options);
 }
 
-async function fetcher(url: string) {
-  const options = {
-    ...sharedOptions,
-    method: 'GET',
-  };
+async function getAccessToken() {
+  const currentUserId = localStorage.getItem('userId');
 
-  await responser(url, options);
+  if (currentUserId)
+    return (
+      await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/token?id=${currentUserId}`
+      )
+    ).json();
+
+  return undefined;
 }
 
-export { fetcher, poster };
+export { getAccessToken, poster };

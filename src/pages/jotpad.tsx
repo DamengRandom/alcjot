@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 
-import { poster } from '@/utils/apiCaller';
+import { getAccessToken, poster } from '@/utils/apiCaller';
 
-import { BoozeFields, initialBoozeFieldValues } from '../utils/AppConfig';
+import { BoozeFields, initialBoozeFieldValues } from '../utils/appConfig';
 
 export default function Jotpad() {
   const router = useRouter();
@@ -21,6 +21,7 @@ export default function Jotpad() {
   };
   const [loading, setLoading] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
+
   const logout = async () => {
     const currentUserId = localStorage.getItem('userId');
 
@@ -36,12 +37,8 @@ export default function Jotpad() {
 
   async function fetchToken() {
     setLoading(true);
-    const currentUserId = localStorage.getItem('userId');
-    const accessToken = await (
-      await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/token?id=${currentUserId}`
-      )
-    ).json();
+
+    const accessToken = await getAccessToken();
 
     if ((accessToken as any)?.token) setAuthenticated(true);
 

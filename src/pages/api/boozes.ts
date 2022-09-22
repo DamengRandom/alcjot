@@ -1,25 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import apiHandler from '@/utils/apiHandler';
-import { APIMessage } from '@/utils/AppConfig';
+import { APIMessage } from '@/utils/appConfig';
+import type { BoozeForm } from '@/utils/appTypes';
 
 import connect from '../../../lib/mongodb';
 import DrinkCollection from '../../../model/drinkSchema';
 
 connect(); // ensure connect to mongodb
-
-interface Booze {
-  time: Date;
-  name: string;
-  type: string;
-  from: string;
-  volume: string;
-  capcity: string;
-  price: string;
-  feel: string;
-  description: string;
-  image: string;
-}
 
 const boozeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -30,7 +18,7 @@ const boozeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
     switch (method) {
       case 'POST':
         body.time = new Date().toISOString();
-        booze = await (DrinkCollection as any).create(body as Booze);
+        booze = await (DrinkCollection as any).create(body as BoozeForm);
 
         if (!booze)
           apiHandler(res, 400, {
