@@ -29,7 +29,15 @@ A jot for recording some alcohol I have seen ..
 22. https://masteringjs.io/tutorials/mongoose/delete-by-id#:~:text=There%20is%20currently%20no%20method,the%20document%20will%20be%20deleted.
 23. https://github.com/developerasun/pawcon/issues/48
 24. https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client
-25. 
+25. https://tailwindcss.com/docs/flex-direction
+26. https://tailwindcss.com/docs/flex-grow
+27. https://tailwindcss.com/docs/cursor
+28. https://tailwindcss.com/docs/list-style-type
+29. https://tailwindcss.com/docs/justify-content
+30. https://www.geeksforgeeks.org/tailwind-css-font-size/
+31. https://9elements.github.io/fancy-border-radius/#30.30.38.30--.
+32. https://markodenic.com/css-generators/
+33. 
  -->
  
 <!-- My thoughts -->
@@ -38,5 +46,6 @@ A jot for recording some alcohol I have seen ..
 1. lazxy loading data records
 2. image using text-covered effect (find from red book collections) [Effect: hover to show the original image]
 3. search using debouce hook (create a debouce hook)
-4. 
+4. secondary theme color: #00FFC3
+5. 
  -->
