@@ -12,7 +12,7 @@ describe('Index page', () => {
     it('should have based text', () => {
       render(<Index />);
 
-      const heading = screen.getByText(/6 based/);
+      const heading = screen.getByText(/Gin/);
 
       expect(heading).toBeInTheDocument();
     });

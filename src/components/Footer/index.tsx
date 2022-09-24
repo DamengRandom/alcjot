@@ -4,11 +4,14 @@ import { AlcjotConfigs } from '@/utils/AppConfig';
 
 export default function Footer() {
   return (
-    <div className="border-t border-gray-300 py-8 text-center text-sm">
-      {new Date().getFullYear()} {AlcjotConfigs.title}. Powered by{' '}
-      <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>{' '}
-      {' & Developed by '}
+    <div className="py-8 px-6 text-right text-sm">
+      @{new Date().getFullYear()} {AlcjotConfigs.title} -{' '}
       <a href="https://damengrandom.vercel.app/">Damengrandom</a>
+      {/* <span className="text-xs">
+        {' ('}
+        Templated from{' '}
+        <a href="https://creativedesignsguru.com">CreativeDesignsGuru{')'}</a>
+      </span> */}
     </div>
   );
 }

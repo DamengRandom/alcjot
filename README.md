@@ -37,7 +37,15 @@ A jot for recording some alcohol I have seen ..
 30. https://www.geeksforgeeks.org/tailwind-css-font-size/
 31. https://9elements.github.io/fancy-border-radius/#30.30.38.30--.
 32. https://markodenic.com/css-generators/
-33. 
+33. https://www.softr.io/tools/svg-wave-generator
+34. https://coolors.co/palettes/trending
+35. http://www.charliewaite.me/
+36. https://www.mockplus.com/blog/post/website-sidebar-design
+37. https://coolors.co/palette/0d3082-88dae7-76cd65-ffc247-ff8133-eb5133
+38. https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes
+39. https://www.thespruceeats.com/quick-guide-to-distilled-spirits-760713
+40. https://fontawesome.com/search
+41. 
  -->
  
 <!-- My thoughts -->

@@ -1,9 +1,5 @@
 @tailwind base;
 
-a:hover {
-  @apply border-b-2 border-blue-700;
-}
-
 @tailwind components;
 
 @tailwind utilities;
@@ -21,4 +17,20 @@ a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 180px;
+}
+
+.hidebar::-webkit-scrollbar {
+  display: none; /* Chrome & Safari */
+}
+
+.hidebar {
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-section {}
+
+@media only screen and (max-width: 768px) {
+  .hide-section {
+    display: none;
+  }
 }

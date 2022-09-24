@@ -1,9 +1,8 @@
 import React from 'react';
 
-export default function About() {
+export default function Services() {
   return (
-    <section className="grow">
-      <h4 className="p-4 text-center text-2xl">[* For Sale *]</h4>
+    <section>
       <div className="flex items-center justify-center">
         <div className="max-w-sm rounded-lg border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800">
           <svg
