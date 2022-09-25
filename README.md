@@ -45,7 +45,10 @@ A jot for recording some alcohol I have seen ..
 38. https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes
 39. https://www.thespruceeats.com/quick-guide-to-distilled-spirits-760713
 40. https://fontawesome.com/search
-41. 
+41. https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+42. https://devdojo.com/tailwindcss/buttons
+43. https://dev.to/alexandprivate/build-your-own-react-tooltip-component-25bd
+44. 
  -->
  
 <!-- My thoughts -->

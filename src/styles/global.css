@@ -19,6 +19,48 @@
   min-height: 180px;
 }
 
+.brandy-bg {
+  background-image: url('/assets/images/brandy-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+}
+
+.gin-bg {
+  background-image: url('/assets/images/gin-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.rum-bg {
+  background-image: url('/assets/images/rum-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.tequila-bg {
+  background-image: url('/assets/images/tequila-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.vodka-bg {
+  background-image: url('/assets/images/vodka-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.whiskey-bg {
+  background-image: url('/assets/images/whiskey-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
 .hidebar::-webkit-scrollbar {
   display: none; /* Chrome & Safari */
 }

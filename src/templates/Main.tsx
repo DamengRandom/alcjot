@@ -28,9 +28,13 @@ const Main = (props: IMainProps) => (
         <Banner />
         <div className="flex justify-end">
           <Link href="/services">
-            <h4 className="cursor-pointer p-4 text-2xl text-theme-300">
-              [* For Sale *]
-            </h4>
+            <p className="group relative mr-6 cursor-pointer px-6 py-3 font-bold text-black">
+              <span className="absolute inset-0 h-full w-full -translate-x-2 -translate-y-2 bg-theme-300 transition duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0"></span>
+              <span className="absolute inset-0 h-full w-full border-4 border-black"></span>
+              <span className="relative">
+                {'{ '} For Sale {' }'}
+              </span>
+            </p>
           </Link>
         </div>
       </div>

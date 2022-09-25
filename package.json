@@ -1,6 +1,6 @@
 {
   "name": "alcjot",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "scripts": {
     "dev": "PORT=6677 next dev",
     "build": "next build",
@@ -19,7 +19,6 @@
     "dotenv": "^16.0.2",
     "mongodb": "^4.9.1",
     "mongoose": "^6.5.4",
-    "multer": "^1.4.5-lts.1",
     "next": "^12.2.5",
     "next-seo": "^5.5.0",
     "react": "^18.2.0",

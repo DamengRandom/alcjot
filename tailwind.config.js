@@ -47,6 +47,12 @@ module.exports = {
           600: '#EB5133',
         },
       },
+      lineHeight: {
+        12: '3rem',
+        13: '4rem',
+        14: '5rem',
+        15: '6rem',
+      },
     },
   },
   plugins: [],
