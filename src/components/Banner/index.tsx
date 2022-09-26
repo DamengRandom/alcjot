@@ -12,8 +12,8 @@ const WeChatImage = () => (
 
 export default function Banner() {
   return (
-    <section className="flex flex-col p-4 text-right dark:bg-gray-800 md:px-6 md:py-2">
-      <h2 className="mb-2 text-6xl font-extrabold leading-14 tracking-tight text-gray-900 dark:text-white">
+    <section className="flex flex-col p-4 text-right md:px-6 md:py-2">
+      <h2 className="mb-2 text-6xl font-extrabold leading-14 tracking-tight text-gray-900">
         DO MORE OF WHAT MAKES YOU <span className="text-theme-600">HAPPY</span>
       </h2>
       <p className="mb-3 text-gray-500 dark:text-gray-400">

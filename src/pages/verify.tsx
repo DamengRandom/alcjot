@@ -49,27 +49,56 @@ export default function Verify() {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label>ID: </label>
-        <input
-          {...register('id', {
-            required: true,
-          })}
-        />
-        {errors?.id?.type === 'required' && <p>Please enter an ID</p>}
-      </div>
-      <div>
-        <label>Salt: </label>
-        <input
-          {...register('passcode', {
-            required: true,
-          })}
-        />
-        {errors?.passcode?.type === 'required' && <p>Please enter a salt</p>}
-      </div>
-      {!submiting && <input type="submit" />}
-      {submiting && <p>Verifying ..</p>}
-    </form>
+    <section className="flex h-screen w-full items-center justify-center">
+      <form
+        className="mb-4 flex w-96 flex-col rounded bg-white px-8 pt-6 pb-8 shadow-md"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <h3 className="mb-8 text-xl">Only For Author ..</h3>
+        <div className="mb-4">
+          <label
+            className="mb-2 block text-sm font-bold text-gray-700"
+            htmlFor="ID"
+          >
+            ID:{' '}
+          </label>
+          <input
+            className="mb-3 w-full appearance-none rounded border border-theme-500 py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+            {...register('id', {
+              required: true,
+            })}
+          />
+          {errors?.id?.type === 'required' && (
+            <p className="text-xs italic text-red-500">Please enter an ID</p>
+          )}
+        </div>
+        <div>
+          <label
+            className="mb-2 block text-sm font-bold text-gray-700"
+            htmlFor="Salt"
+          >
+            Salt:{' '}
+          </label>
+          <input
+            className="mb-3 w-full appearance-none rounded border border-theme-500 py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+            {...register('passcode', {
+              required: true,
+            })}
+          />
+          {errors?.passcode?.type === 'required' && (
+            <p className="text-xs italic text-red-500">Please enter a salt</p>
+          )}
+        </div>
+        {!submiting && (
+          <button
+            className="mt-8 rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700 focus:outline-none"
+            type="submit"
+          >
+            Submit
+          </button>
+        )}
+        {submiting && <p>Verifying ..</p>}
+      </form>
+    </section>
   );
 }
