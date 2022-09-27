@@ -51,8 +51,8 @@ export default function Jotpad() {
       const accessToken = await getAccessToken();
 
       if ((accessToken as any)?.token)
-        setStates((prevState: any) => ({
-          ...prevState,
+        setStates(() => ({
+          loading: false,
           authenticated: true,
         }));
     } catch (error) {

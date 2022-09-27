@@ -49,7 +49,8 @@ A jot for recording some alcohol I have seen ..
 42. https://devdojo.com/tailwindcss/buttons
 43. https://dev.to/alexandprivate/build-your-own-react-tooltip-component-25bd
 44. https://cultivate.software/useeffect/
-45. 
+45. https://stackoverflow.com/questions/43040721/how-to-update-nested-state-properties-in-react
+46. 
  -->
  
 <!-- My thoughts -->
@@ -58,6 +59,6 @@ A jot for recording some alcohol I have seen ..
 1. lazxy loading data records
 2. image using text-covered effect (find from red book collections) [Effect: hover to show the original image]
 3. search using debouce hook (create a debouce hook)
-4. secondary theme color: #00FFC3
+4. graphql for fetching data?
 5. 
  -->
