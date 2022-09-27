@@ -3,7 +3,9 @@ import React from 'react';
 
 import Jotpad from '@/pages/jotpad';
 
-global.fetch = require('jest-fetch-mock');
+// global.fetch = require('jest-fetch-mock');
+
+jest.mock('../utils/apiCaller');
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
@@ -12,15 +14,17 @@ jest.mock('react', () => ({
 
 describe('Jotpad page', () => {
   describe('Render method', () => {
-    const setLoading = jest.fn();
-    const setAuthenticated = jest.fn();
+    const setStates = jest.fn();
 
     afterEach(cleanup);
 
     it('should have price field', () => {
       jest
         .spyOn(React, 'useState')
-        .mockImplementation(() => [false, setLoading]);
+        .mockImplementation(() => [
+          { loading: false, authenticated: false },
+          setStates,
+        ]);
 
       render(<Jotpad />);
 
@@ -29,26 +33,29 @@ describe('Jotpad page', () => {
       expect(fieldLabel).toBeInTheDocument();
     });
 
-    // eslint-disable-next-line jest/no-disabled-tests
-    it.skip('should have description field', async () => {
-      localStorage.setItem('userId', 'test1');
+    it('should have description field', async () => {
+      // mock method 1
+      // localStorage.setItem('userId', 'test1');
 
-      await (fetch as any).mockResponse(JSON.stringify({ token: 'test' }));
+      // await (fetch as any).mockResponse(JSON.stringify({ token: 'test' }));
 
-      const useStateMock: any = (useState: any) => [useState, setAuthenticated];
+      // mock method 2
+      // await (getAccessToken as any).mockResolvedValueOnce({
+      //   token: 'true',
+      // });
 
       jest
         .spyOn(React, 'useState')
-        .mockImplementation(() => useStateMock('true'));
-
-      setLoading.mockReturnValue(() => false);
+        .mockImplementation(() => [
+          { loading: false, authenticated: true },
+          setStates,
+        ]);
 
       render(<Jotpad />);
 
       const fieldLabel = screen.getByText(/price/);
 
       expect(fieldLabel).toBeInTheDocument();
-      // expect(true).toBe(true);
     });
   });
 });

@@ -20,8 +20,10 @@ export default function Jotpad() {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     poster(`${process.env.NEXT_PUBLIC_BASE_URL}/boozes`, data);
   };
-  const [loading, setLoading] = useState(false);
-  const [authenticated, setAuthenticated] = useState(false);
+  const [states, setStates] = useState({
+    loading: true,
+    authenticated: false,
+  });
 
   const logout = async () => {
     const currentUserId = localStorage.getItem('userId');
@@ -32,19 +34,33 @@ export default function Jotpad() {
     );
 
     localStorage.removeItem('userId');
-    setAuthenticated(false);
+
+    setStates((prevState: any) => ({
+      ...prevState,
+      authenticated: false,
+    }));
     router.push('/');
   };
 
   async function fetchToken() {
     try {
-      setLoading(true);
+      setStates((prevState: any) => ({
+        ...prevState,
+        loading: true,
+      }));
       const accessToken = await getAccessToken();
 
-      if ((accessToken as any)?.token) setAuthenticated(true);
+      if ((accessToken as any)?.token)
+        setStates((prevState: any) => ({
+          ...prevState,
+          authenticated: true,
+        }));
     } catch (error) {
       console.error(error);
-      setLoading(false);
+      setStates((prevState: any) => ({
+        ...prevState,
+        loading: false,
+      }));
     }
   }
 
@@ -56,9 +72,9 @@ export default function Jotpad() {
     if (isSubmitSuccessful) reset(initialBoozeFieldValues);
   }, [isSubmitSuccessful, reset]);
 
-  if (loading) return <p>Loading ..</p>;
+  if (states.loading) return <p>Loading ..</p>;
 
-  return authenticated ? (
+  return states.authenticated ? (
     <div>
       <section>
         <h3>Booze Form</h3>
