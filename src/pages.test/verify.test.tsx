@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 
 import Verify from '@/pages/verify';
 
@@ -8,6 +8,16 @@ import Verify from '@/pages/verify';
 describe('Verify page', () => {
   describe('Render method', () => {
     jest.useFakeTimers();
+
+    afterEach(cleanup);
+
+    it('should have id field', () => {
+      render(<Verify />);
+
+      const fieldLabel = screen.getByText(/ID/);
+
+      expect(fieldLabel).toBeInTheDocument();
+    });
 
     it('should have based text', () => {
       render(<Verify />);

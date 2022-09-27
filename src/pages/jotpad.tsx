@@ -37,13 +37,15 @@ export default function Jotpad() {
   };
 
   async function fetchToken() {
-    setLoading(true);
+    try {
+      setLoading(true);
+      const accessToken = await getAccessToken();
 
-    const accessToken = await getAccessToken();
-
-    if ((accessToken as any)?.token) setAuthenticated(true);
-
-    setLoading(false);
+      if ((accessToken as any)?.token) setAuthenticated(true);
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
