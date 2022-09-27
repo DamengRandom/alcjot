@@ -21,7 +21,7 @@ export default function Jotpad() {
     poster(`${process.env.NEXT_PUBLIC_BASE_URL}/boozes`, data);
   };
   const [states, setStates] = useState({
-    loading: true,
+    loading: false,
     authenticated: false,
   });
 
