@@ -10,5 +10,7 @@ export default function GraphQLProvider({ children }: { children: ReactNode }) {
     cache: new InMemoryCache(),
   });
 
+  console.info(`hey 🖼🖼🖼🖼🖼 ${process.env.NEXT_PUBLIC_PROD_APOLLO}`);
+
   return <ApolloProvider client={client}>{children}</ApolloProvider>;
 }
