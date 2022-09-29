@@ -10,13 +10,17 @@
     "build-prod": "run-s clean build export",
     "clean": "rimraf .next out",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "check-types": "tsc --noEmit --pretty",
     "test": "jest --ci --forceExit --detectOpenHandles --maxWorkers=2 --no-cache --all --bail --watchAll=false --verbose",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "apollo-server": "^3.10.2",
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.2",
+    "graphql": "^16.6.0",
     "mongodb": "^4.9.1",
     "mongoose": "^6.5.4",
     "next": "^12.2.5",

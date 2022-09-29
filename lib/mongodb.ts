@@ -1,7 +1,17 @@
+import { ApolloServer } from 'apollo-server';
 import type { ConnectionStates } from 'mongoose';
 import mongoose from 'mongoose';
 
+import { resolvers } from '../graphql/resolvers';
+import { typeDefs } from '../graphql/typeDefs';
+
 const connection: { isConnected?: ConnectionStates } = {};
+
+// create Apollo Server
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
 async function connect() {
   try {
@@ -11,8 +21,17 @@ async function connect() {
 
     connection.isConnected = db?.connections[0]?.readyState;
     console.info('Database connected ~~');
+
+    if (connection.isConnected) {
+      const apolloServerResponse = await server.listen();
+
+      console.info(
+        `Apollo Server is running on ${apolloServerResponse.url} 🌴🌴 ~~`
+      );
+    }
   } catch (error) {
     console.error('Database not connected yet', error?.message);
+    process.exit(1);
   }
 }
 

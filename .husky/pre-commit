@@ -14,7 +14,7 @@ npm run build ||
 )
 
 # Check Eslint errors
-npm run lint ||
+npm run lint:fix ||
 (
     echo '❌❌❌❌ Fix Failed Lints ❌❌❌❌
         Lint errors detected ..'

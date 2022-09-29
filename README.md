@@ -50,7 +50,9 @@ A jot for recording some alcohol I have seen ..
 43. https://dev.to/alexandprivate/build-your-own-react-tooltip-component-25bd
 44. https://cultivate.software/useeffect/
 45. https://stackoverflow.com/questions/43040721/how-to-update-nested-state-properties-in-react
-46. 
+46. https://www.youtube.com/watch?v=F3BWdFXEJPk
+47. https://www.youtube.com/watch?v=uPxo9NQLVMI
+48. 
  -->
  
 <!-- My thoughts -->
