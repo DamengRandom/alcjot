@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 export default function Drink() {
   async function activateGraphql() {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/graphql`);
-    const json = response.json();
+    const json = await response.json();
 
     return json;
   }
@@ -37,7 +37,7 @@ export default function Drink() {
 
   const { loading, error, data } = useQuery(getDrinks);
 
-  console.info('magic time??? ', loading, error, JSON.stringify(data));
+  console.info('magic time??? ', loading, error, JSON.stringify(data, null, 2));
 
   if (loading) return <p>Loading ..</p>;
 

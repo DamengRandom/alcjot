@@ -23,6 +23,7 @@ async function graphqlHandler(_: any, res: NextApiResponse) {
 
     return apiHandler(res, 200, apolloServerResponse);
   } catch (error) {
+    console.info('🤪🤪🤪🤪🤪🤪🤪🤪🤪', error?.message);
     return apiHandler(res, 500, { error: error?.message });
   }
 }
