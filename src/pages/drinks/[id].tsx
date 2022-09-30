@@ -11,7 +11,8 @@ export default function Drink() {
   }
 
   useEffect(() => {
-    activateGraphql();
+    sessionStorage.setItem('gqlActive', 'yes');
+    if (!sessionStorage.getItem('gqlActive')) activateGraphql();
   }, []);
 
   const {
