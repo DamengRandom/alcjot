@@ -10,7 +10,7 @@ npm run lint:fix ||
 (
     echo '❌❌❌❌ Fix Failed Lints ❌❌❌❌
         Lint errors detected ..'
-    true;
+    false;
 )
 
 # Check Project Build Status

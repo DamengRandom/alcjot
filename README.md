@@ -53,7 +53,8 @@ A jot for recording some alcohol I have seen ..
 46. https://www.youtube.com/watch?v=F3BWdFXEJPk
 47. https://www.youtube.com/watch?v=uPxo9NQLVMI
 48. https://www.mongodb.com/docs/realm/web/nextjs/#atlas-graphql-api
-49. 
+49. https://levelup.gitconnected.com/setting-up-graphql-api-with-mongodb-and-apollo-server-for-a-nextjs-app-cec7a9baedbf
+50. 
  -->
  
 <!-- My thoughts -->

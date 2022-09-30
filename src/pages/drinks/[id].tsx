@@ -1,8 +1,16 @@
 import { gql, useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function Drink() {
+  function activateGraphql() {
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/graphql`);
+  }
+  
+  useEffect(() => {
+    activateGraphql();
+  }, []);
+
   const {
     query: { id },
   } = useRouter();
