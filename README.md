@@ -54,7 +54,9 @@ A jot for recording some alcohol I have seen ..
 47. https://www.youtube.com/watch?v=uPxo9NQLVMI
 48. https://www.mongodb.com/docs/realm/web/nextjs/#atlas-graphql-api
 49. https://levelup.gitconnected.com/setting-up-graphql-api-with-mongodb-and-apollo-server-for-a-nextjs-app-cec7a9baedbf
-50. 
+50. https://www.apollographql.com/tutorials/lift-off-part5/deploying-apollo-server
+51. https://www.apollographql.com/docs/apollo-server/integrations/middleware/
+52. 
  -->
  
 <!-- My thoughts -->

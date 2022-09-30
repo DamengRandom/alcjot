@@ -6,7 +6,7 @@ export default function Drink() {
   function activateGraphql() {
     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/graphql`);
   }
-  
+
   useEffect(() => {
     activateGraphql();
   }, []);

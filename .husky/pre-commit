@@ -6,7 +6,7 @@
 echo '🌴🌴 Linting & testing the code changes before committing 🌴🌴'
 
 # Check Eslint errors
-npm run lint:fix ||
+npm run lint ||
 (
     echo '❌❌❌❌ Fix Failed Lints ❌❌❌❌
         Lint errors detected ..'
