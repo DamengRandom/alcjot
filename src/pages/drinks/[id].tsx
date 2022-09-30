@@ -3,8 +3,11 @@ import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 
 export default function Drink() {
-  function activateGraphql() {
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/graphql`);
+  async function activateGraphql() {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/graphql`);
+    const json = response.json();
+
+    return json;
   }
 
   useEffect(() => {
@@ -34,7 +37,7 @@ export default function Drink() {
 
   const { loading, error, data } = useQuery(getDrinks);
 
-  console.info('magic time??? ', loading, error, data);
+  console.info('magic time??? ', loading, error, JSON.stringify(data));
 
   if (loading) return <p>Loading ..</p>;
 
