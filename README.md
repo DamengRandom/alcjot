@@ -52,7 +52,8 @@ A jot for recording some alcohol I have seen ..
 45. https://stackoverflow.com/questions/43040721/how-to-update-nested-state-properties-in-react
 46. https://www.youtube.com/watch?v=F3BWdFXEJPk
 47. https://www.youtube.com/watch?v=uPxo9NQLVMI
-48. 
+48. https://www.mongodb.com/docs/realm/web/nextjs/#atlas-graphql-api
+49. 
  -->
  
 <!-- My thoughts -->
