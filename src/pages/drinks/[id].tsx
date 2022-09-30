@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 
 export default function Drink() {
   async function activateGraphql() {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/graphql`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}`);
     const json = await response.json();
 
     return json;
