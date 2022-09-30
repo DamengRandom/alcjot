@@ -15,7 +15,13 @@ const server = new ApolloServer({
 async function graphqlHandler(_: any, res: NextApiResponse) {
   try {
     await connect();
-    const apolloServerResponse = await server.listen({ port: 7476 });
+    const apolloServerResponse = await server.listen({
+      port: 7476,
+      host:
+        process.env.NODE_ENV === 'development'
+          ? 'localhost'
+          : 'alcjot.vercel.app',
+    });
 
     console.info(
       `Apollo Server is running on ${apolloServerResponse.url} 🌴🌴 ~~`
