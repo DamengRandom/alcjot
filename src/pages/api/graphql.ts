@@ -10,7 +10,11 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   csrfPrevention: true,
-  cors: true,
+  cors: {
+    origin: ['https://alcjot.vercel.app', 'https://studio.apollographql.com'],
+    credentials: true,
+  },
+  introspection: true,
 });
 
 async function graphqlHandler(_: any, res: NextApiResponse) {
@@ -22,7 +26,11 @@ async function graphqlHandler(_: any, res: NextApiResponse) {
       `Apollo Server is running on ${apolloServerResponse.url} 🌴🌴 ~~`
     );
 
-    return apiHandler(res, 200, apolloServerResponse);
+    // return apiHandler(res, 200, apolloServerResponse);
+    return res
+      .status(200)
+      .setHeader('Access-Control-Allow-Origin', '*')
+      .send(apolloServerResponse);
   } catch (error) {
     console.info('🤪🤪🤪🤪🤪🤪🤪🤪🤪', error?.message);
     return apiHandler(res, 500, { error: error?.message });

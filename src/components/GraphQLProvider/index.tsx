@@ -13,6 +13,10 @@ export default function GraphQLProvider({ children }: { children: ReactNode }) {
     //     process.env.NODE_ENV === 'development'
     //       ? process.env.NEXT_PUBLIC_LOCAL_APOLLO
     //       : process.env.NEXT_PUBLIC_PROD_APOLLO,
+    //   // credentials: 'include',
+    //   // fetchOptions: {
+    //   //   mode: 'no-cors',
+    //   // },
     // }),
     uri:
       process.env.NODE_ENV === 'development'
