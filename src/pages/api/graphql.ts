@@ -10,6 +10,9 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   csrfPrevention: true,
+  cors: {
+    origin: ['https://alcjot.vercel.app', 'https://studio.apollographql.com'],
+  },
 });
 
 async function graphqlHandler(_: any, res: NextApiResponse) {
