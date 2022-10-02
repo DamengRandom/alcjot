@@ -4,10 +4,17 @@ import React, { useEffect } from 'react';
 
 export default function Drink() {
   async function activateGraphql() {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/graphql`);
-    const json = await response.json();
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/graphql`
+      );
+      const json = await response.json();
 
-    return json;
+      return json;
+    } catch (error) {
+      console.error(`Error during graphql server setup: ${error}`);
+      return error;
+    }
   }
 
   useEffect(() => {
