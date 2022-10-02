@@ -56,7 +56,8 @@ A jot for recording some alcohol I have seen ..
 49. https://levelup.gitconnected.com/setting-up-graphql-api-with-mongodb-and-apollo-server-for-a-nextjs-app-cec7a9baedbf
 50. https://www.apollographql.com/tutorials/lift-off-part5/deploying-apollo-server
 51. https://www.apollographql.com/docs/apollo-server/integrations/middleware/
-52. 
+52. https://github.com/bengrunfeld/nextjs-apollo-app/issues/1 (TRIAL)
+53. 
  -->
  
 <!-- My thoughts -->
