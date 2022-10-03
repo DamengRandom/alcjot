@@ -1,35 +1,47 @@
 import { useEffect, useState } from 'react';
 
-export const useFetch = (url: string, options: any) => {
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+type TFetch = {
+  response: any;
+  loading: boolean;
+  error: string | null;
+};
+
+export const useFetch = (url: string, defaultResponse: any = null) => {
+  const [states, setStates] = useState({
+    response: defaultResponse,
+    loading: false,
+    error: null,
+  } as TFetch);
+
+  const fetchData = async () => {
+    try {
+      setStates((prevState: any) => ({
+        ...prevState,
+        loading: true,
+      }));
+      const res = await fetch(url);
+      const json = await res.json();
+
+      setStates((prevState: TFetch) => ({
+        ...prevState,
+        response: json,
+      }));
+    } catch (err) {
+      setStates((prevState: TFetch) => ({
+        ...prevState,
+        error: err?.message,
+      }));
+    } finally {
+      setStates((prevState: TFetch) => ({
+        ...prevState,
+        loading: false,
+      }));
+    }
+  };
 
   useEffect(() => {
-    const abortController = new AbortController();
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(url, {
-          ...options,
-          signal: abortController.signal,
-        });
-        const json = await res.json();
-
-        setResponse(json);
-        setLoading(false);
-      } catch (err) {
-        setError(err?.message);
-        setLoading(false);
-      }
-    };
-
     if (url) fetchData();
+  }, [url]);
 
-    return () => {
-      abortController.abort();
-    };
-  }, [url, options]);
-
-  return { response, error, loading };
+  return [states.response, states.error, states.loading];
 };

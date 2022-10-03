@@ -11,9 +11,14 @@ connect(); // ensure connect to mongodb
 
 const boozeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const { body, method } = req;
+    const {
+      body,
+      method,
+      query: { type },
+    } = req;
     let booze;
     let boozes;
+    let taggedBoozes;
 
     switch (method) {
       case 'POST':
@@ -34,7 +39,11 @@ const boozeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
             error: APIMessage.General_404('/boozes'),
           });
 
-        return apiHandler(res, 200, boozes);
+        taggedBoozes = type
+          ? boozes.filter((b: any) => b.type === type)
+          : boozes;
+
+        return apiHandler(res, 200, taggedBoozes);
       default:
         return apiHandler(res, 405, APIMessage.General_405(method as string));
     }

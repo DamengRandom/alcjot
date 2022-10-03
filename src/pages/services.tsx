@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-export default function Services() {
+export default memo(function Services() {
   return (
     <section>
       <div className="flex items-center justify-center">
@@ -44,4 +44,4 @@ export default function Services() {
       </div>
     </section>
   );
-}
+});

@@ -13,8 +13,8 @@ export const BoozeFields = [
   'capcity',
   'feel',
   'price',
-  'description',
   'image',
+  'description',
 ];
 
 export const initialBoozeFieldValues = {
@@ -25,8 +25,8 @@ export const initialBoozeFieldValues = {
   capcity: '',
   feel: '',
   price: '',
-  description: '',
   image: '',
+  description: '',
 };
 
 export const APIMessage = {

@@ -63,9 +63,9 @@ A jot for recording some alcohol I have seen ..
 <!-- My thoughts -->
 
 <!-- 
-1. lazxy loading data records
+1. lazy loading data records
 2. image using text-covered effect (find from red book collections) [Effect: hover to show the original image]
 3. search using debouce hook (create a debouce hook)
-4. graphql for fetching data?
+4. 
 5. 
  -->

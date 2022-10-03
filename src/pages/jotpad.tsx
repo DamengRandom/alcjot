@@ -79,15 +79,25 @@ export default function Jotpad() {
       <section>
         <h3>Booze Form</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
-          {BoozeFields.slice(0, -1).map((field, index) => (
+          {BoozeFields.map((field, index) => (
             <div key={`${field}-${index}`}>
               <label>{field}: </label>
-              <input
-                {...register(field as any, {
-                  required: true,
-                  maxLength: 400,
-                })}
-              />
+              {field !== 'description' ? (
+                <input
+                  {...register(field as any, {
+                    required: true,
+                    maxLength: 100,
+                  })}
+                />
+              ) : (
+                <textarea
+                  {...register(field as any, {
+                    required: true,
+                    maxLength: 800,
+                  })}
+                />
+              )}
+
               {errors?.[field]?.type === 'maxLength' && (
                 <p>
                   Ooops, you need to enter a maximum value of 400 for the{' '}
