@@ -60,14 +60,15 @@ A jot for recording some alcohol I have seen ..
 53. https://exerror.com/component-definition-is-missing-displayname-react-display-name/#:~:text=%2Dname)%20Error%3F-,How%20To%20Solve%20Component%20definition%20is%20missing%20displayName%20(react%2Fdisplay,comment%20right%20above%20your%20component.
 54. https://www.tailwindtoolbox.com/components/fullscreen-modal
 55. https://stackoverflow.com/questions/30125705/css-how-to-make-an-element-fade-in-and-then-fade-out
-56. 
+56. https://dev.to/jobpick/how-to-create-a-skeleton-loader-in-tailwindcss-38gh
+57. 
  -->
  
 <!-- My thoughts -->
 
 <!-- 
 1. tech debt: scroll bar disabled when shown booze modal (useContext)
-2. search using debouce hook (create a debouce hook)
+2. 
 3. 
 4. 
 5. 

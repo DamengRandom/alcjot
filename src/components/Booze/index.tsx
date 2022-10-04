@@ -13,11 +13,7 @@ export default function Booze(booze: Partial<IBooze>) {
 
   return (
     <>
-      <div
-        className={`max-w-sm break-inside-avoid overflow-auto shadow-lg ${
-          !toggle ? 'fadeIn' : 'fadeOut'
-        }`}
-      >
+      <div className={`${!toggle ? 'fadeIn' : 'fadeOut'}`}>
         <Card booze={booze} handleToggle={handleToggle} />
       </div>
       <div className={toggle ? 'fadeIn' : 'fadeOut'}>
