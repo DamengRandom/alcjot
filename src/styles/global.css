@@ -71,6 +71,25 @@
 
 .hide-section {}
 
+.fadeOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 600ms, opacity 600ms;
+}
+.fadeIn {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 600ms;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
   .hide-section {
     display: none;

@@ -53,6 +53,16 @@ module.exports = {
         14: '5rem',
         15: '6rem',
       },
+      width: {
+        80: '20rem',
+        88: '22rem',
+      },
+      height: {
+        112: '28rem',
+        128: '32rem',
+        144: '36rem',
+        160: '40rem',
+      },
     },
   },
   plugins: [],

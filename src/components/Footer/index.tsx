@@ -2,7 +2,7 @@ import React from 'react';
 
 import { AlcjotConfigs } from '@/utils/AppConfig';
 
-export default function Footer() {
+export default React.memo(function Footer() {
   return (
     <div className="py-8 px-6 text-right text-sm">
       @{new Date().getFullYear()} {AlcjotConfigs.title} -{' '}
@@ -14,4 +14,4 @@ export default function Footer() {
       </span> */}
     </div>
   );
-}
+});

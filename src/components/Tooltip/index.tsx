@@ -12,6 +12,7 @@ export default function Tooltip({
   styling: string;
 }) {
   const tipRef = createRef<any>();
+
   function mouseEnter() {
     tipRef.current.style.opacity = 1;
     tipRef.current.style.marginLeft = '2.5rem';

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-export default function Alcohol() {
+export default React.memo(function Alcohol() {
   const drinks = [
     {
       bgColor: 'brandy-bg bg-theme-100',
@@ -49,6 +49,7 @@ export default function Alcohol() {
       volumeText: '40-60%',
     },
   ];
+
   return (
     <section className="h-full">
       {drinks.map(({ bgColor, description, name, link, volumeText }, index) => (
@@ -87,4 +88,4 @@ export default function Alcohol() {
       ))}
     </section>
   );
-}
+});

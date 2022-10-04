@@ -2,15 +2,17 @@ import React from 'react';
 
 import Tooltip from '../Tooltip';
 
-const WeChatImage = () => (
+const WeChatImage = React.memo(() => (
   <img
     className="h-32 w-32 max-w-fit"
     src="https://res.cloudinary.com/dameng/image/upload/v1664099747/me-wechat_w29nwq.jpg"
     alt="Damon0503"
   />
-);
+));
 
-export default function Banner() {
+WeChatImage.displayName = 'WeChatImage';
+
+export default React.memo(function Banner() {
   return (
     <section className="flex flex-col p-4 text-right md:px-6 md:py-2">
       <h2 className="mb-2 text-6xl font-extrabold leading-14 tracking-tight text-gray-900">
@@ -63,4 +65,4 @@ export default function Banner() {
       </div>
     </section>
   );
-}
+});
