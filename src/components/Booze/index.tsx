@@ -9,6 +9,7 @@ export default function Booze(booze: Partial<IBooze>) {
   const [toggle, setToggle] = useState(false);
   const handleToggle = () => {
     setToggle(!toggle);
+    document.body.style.overflow = !toggle ? 'hidden' : 'auto';
   };
 
   return (

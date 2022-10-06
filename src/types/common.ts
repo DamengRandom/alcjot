@@ -10,3 +10,7 @@ export interface IBooze {
   image: string;
   description: string;
 }
+
+export type IStateProps = {
+  isDarkMode: boolean;
+};

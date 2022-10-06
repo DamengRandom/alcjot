@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
+import AlcjotContexts from '@/contexts';
 import Index from '@/pages/index';
 
 // The easiest solution to mock `next/router`: https://github.com/vercel/next.js/issues/7479
@@ -10,7 +11,11 @@ describe('Index page', () => {
     jest.useFakeTimers();
 
     it('should have based text', () => {
-      render(<Index />);
+      render(
+        <AlcjotContexts>
+          <Index />
+        </AlcjotContexts>
+      );
 
       const heading = screen.getByText(/Gin/);
 
@@ -18,7 +23,11 @@ describe('Index page', () => {
     });
 
     it('should have Damengrandom text', () => {
-      render(<Index />);
+      render(
+        <AlcjotContexts>
+          <Index />
+        </AlcjotContexts>
+      );
 
       const heading = screen.getByText(/Damengrandom/);
 

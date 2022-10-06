@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-export default function BoozeCardLoader() {
+export default memo(function BoozeCardLoader() {
   const skeletonCards = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
   return (
@@ -30,4 +30,4 @@ export default function BoozeCardLoader() {
       ))}
     </div>
   );
-}
+});

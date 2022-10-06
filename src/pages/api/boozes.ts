@@ -23,7 +23,7 @@ const boozeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
     switch (method) {
       case 'POST':
         body.time = new Date().toISOString();
-        booze = await (DrinkCollection as any).create(body as BoozeForm);
+        booze = await (DrinkCollection as any).create(body as BoozeForm); // @TODO recheck on the type any
 
         if (!booze)
           return apiHandler(res, 400, {

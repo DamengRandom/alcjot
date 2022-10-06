@@ -12,11 +12,21 @@ const WeChatImage = React.memo(() => (
 
 WeChatImage.displayName = 'WeChatImage';
 
-export default React.memo(function Banner() {
+export default function Banner({
+  handleThemeToggle,
+}: {
+  handleThemeToggle: () => void;
+}) {
   return (
     <section className="flex flex-col p-4 text-right md:px-6 md:py-2">
       <h2 className="mb-2 text-6xl font-extrabold leading-14 tracking-tight text-gray-900">
-        DO MORE OF WHAT MAKES YOU <span className="text-theme-600">HAPPY</span>
+        DO MORE OF WHAT MAKES YOU{' '}
+        <span
+          className="cursor-pointer text-theme-600"
+          onClick={handleThemeToggle}
+        >
+          HAPPY
+        </span>
       </h2>
       <p className="mb-3 text-gray-500 dark:text-gray-400">
         Recording some drinks I have known. little jots makes life a bit
@@ -65,4 +75,4 @@ export default React.memo(function Banner() {
       </div>
     </section>
   );
-});
+}

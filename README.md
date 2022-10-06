@@ -61,15 +61,17 @@ A jot for recording some alcohol I have seen ..
 54. https://www.tailwindtoolbox.com/components/fullscreen-modal
 55. https://stackoverflow.com/questions/30125705/css-how-to-make-an-element-fade-in-and-then-fade-out
 56. https://dev.to/jobpick/how-to-create-a-skeleton-loader-in-tailwindcss-38gh
-57. 
+57. https://blog.logrocket.com/lazy-loading-components-in-react-16-6-6cea535c0b52/
+58. https://polvara.me/posts/mocking-context-with-react-testing-library
+59. 
  -->
  
 <!-- My thoughts -->
 
 <!-- 
 1. tech debt: scroll bar disabled when shown booze modal (useContext)
-2. 
-3. 
+2. meta data for seo
+3. add some unit tests (test 2 useSates)
 4. 
 5. 
  -->

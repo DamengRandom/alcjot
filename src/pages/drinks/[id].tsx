@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -47,7 +48,7 @@ export default function Drink() {
   if (error) return <p>Error page ...</p>;
 
   return (
-    <section>
+    <section className="overflow-hidden">
       <Nav>
         <div className="flex w-full items-center justify-end">
           <div className="pr-8">
@@ -56,7 +57,9 @@ export default function Drink() {
               handleSearch={handleSearch}
             />
           </div>
-          <h3 className="text-4xl">Alcjot</h3>
+          <h3 className="text-3xl">
+            <Link href="/">Alcjot</Link>
+          </h3>
           <i className="mt-2 pl-2 text-xl">({id})</i>
         </div>
       </Nav>
