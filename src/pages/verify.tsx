@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
@@ -49,56 +50,69 @@ export default function Verify() {
   }, []);
 
   return (
-    <section className="flex h-screen w-full items-center justify-center">
-      <form
-        className="mb-4 flex w-96 flex-col rounded bg-white px-8 pt-6 pb-8 shadow-md"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <h3 className="mb-8 text-xl">Only For Author ..</h3>
-        <div className="mb-4">
-          <label
-            className="mb-2 block text-sm font-bold text-gray-700"
-            htmlFor="ID"
-          >
-            ID:{' '}
-          </label>
-          <input
-            className="mb-3 w-full appearance-none rounded border border-theme-500 py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
-            {...register('id', {
-              required: true,
-            })}
-          />
-          {errors?.id?.type === 'required' && (
-            <p className="text-xs italic text-red-500">Please enter an ID</p>
+    <>
+      <Head>
+        <meta name="description" content="Alcjot Services" />
+        <meta property="og:title" content="Alcjot Services" />
+        <link
+          rel="icon"
+          href={`${router.basePath}/favicon.ico`}
+          key="favicon"
+        />
+        <title>Alcjot Verify | Login to starting jot creation jounrey</title>
+      </Head>
+
+      <section className="flex h-screen w-full items-center justify-center">
+        <form
+          className="mb-4 flex w-96 flex-col rounded bg-white px-8 pt-6 pb-8 shadow-md"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <h3 className="mb-8 text-xl">Only For Author ..</h3>
+          <div className="mb-4">
+            <label
+              className="mb-2 block text-sm font-bold text-gray-700"
+              htmlFor="ID"
+            >
+              ID:{' '}
+            </label>
+            <input
+              className="mb-3 w-full appearance-none rounded border border-theme-500 py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+              {...register('id', {
+                required: true,
+              })}
+            />
+            {errors?.id?.type === 'required' && (
+              <p className="text-xs italic text-red-500">Please enter an ID</p>
+            )}
+          </div>
+          <div>
+            <label
+              className="mb-2 block text-sm font-bold text-gray-700"
+              htmlFor="Salt"
+            >
+              Salt:{' '}
+            </label>
+            <input
+              className="mb-3 w-full appearance-none rounded border border-theme-500 py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+              {...register('passcode', {
+                required: true,
+              })}
+            />
+            {errors?.passcode?.type === 'required' && (
+              <p className="text-xs italic text-red-500">Please enter a salt</p>
+            )}
+          </div>
+          {!submiting && (
+            <button
+              className="mt-8 rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700 focus:outline-none"
+              type="submit"
+            >
+              Submit
+            </button>
           )}
-        </div>
-        <div>
-          <label
-            className="mb-2 block text-sm font-bold text-gray-700"
-            htmlFor="Salt"
-          >
-            Salt:{' '}
-          </label>
-          <input
-            className="mb-3 w-full appearance-none rounded border border-theme-500 py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
-            {...register('passcode', {
-              required: true,
-            })}
-          />
-          {errors?.passcode?.type === 'required' && (
-            <p className="text-xs italic text-red-500">Please enter a salt</p>
-          )}
-        </div>
-        {!submiting && (
-          <button
-            className="mt-8 rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700 focus:outline-none"
-            type="submit"
-          >
-            Submit
-          </button>
-        )}
-        {submiting && <p>Verifying ..</p>}
-      </form>
-    </section>
+          {submiting && <p>Verifying ..</p>}
+        </form>
+      </section>
+    </>
   );
 }

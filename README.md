@@ -2,6 +2,10 @@
 
 A jot for recording some alcohol I have seen ..
 
+#### Measure the page quality
+
+<a href="https://web.dev/measure/?url=https%3A%2F%2Falcjot.vercel.app" target="_blank">Web.dev Checked</a>
+
 <!-- References -->
 
 <!-- 
@@ -63,15 +67,16 @@ A jot for recording some alcohol I have seen ..
 56. https://dev.to/jobpick/how-to-create-a-skeleton-loader-in-tailwindcss-38gh
 57. https://blog.logrocket.com/lazy-loading-components-in-react-16-6-6cea535c0b52/
 58. https://polvara.me/posts/mocking-context-with-react-testing-library
-59. 
+59. https://www.youtube.com/watch?v=8BrZeaw3sLQ
+60. 
  -->
  
 <!-- My thoughts -->
 
 <!-- 
-1. tech debt: scroll bar disabled when shown booze modal (useContext)
-2. meta data for seo
+1. animation for fade in and fdeout -> better with some movement from bottom to top?
+2. hits counter api addin
 3. add some unit tests (test 2 useSates)
-4. 
-5. 
+4. price card add-in including with sell form build
+5. responsive display care
  -->

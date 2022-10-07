@@ -22,11 +22,14 @@ const Meta = (props: IMetaProps) => {
           content="width=device-width,initial-scale=1"
           key="viewport"
         />
+        <meta name="description" content="Alcjot Dashboard" />
+        <meta property="og:title" content="Alcjot" />
         <link
           rel="icon"
           href={`${router.basePath}/favicon.ico`}
           key="favicon"
         />
+        <title>Alcjot</title>
       </Head>
       <NextSeo
         title={props.title}

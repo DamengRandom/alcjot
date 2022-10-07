@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -75,7 +76,17 @@ export default function Jotpad() {
   if (states.loading) return <p>Loading ..</p>;
 
   return states.authenticated ? (
-    <div>
+    <>
+      <Head>
+        <meta name="description" content="Alcjot JotPad" />
+        <meta property="og:title" content="Alcjot JotPad" />
+        <link
+          rel="icon"
+          href={`${router.basePath}/favicon.ico`}
+          key="favicon"
+        />
+        <title>Alcjot JotPad | Create the alchol jot now</title>
+      </Head>
       <section>
         <h3>Booze Form</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -132,7 +143,7 @@ export default function Jotpad() {
       <section>
         <button onClick={logout}>Logout</button>
       </section>
-    </div>
+    </>
   ) : (
     <>
       <p>Whoops, seems like you do not have access for this page ..</p>

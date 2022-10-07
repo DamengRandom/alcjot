@@ -18,7 +18,7 @@ describe('Meta component', () => {
     jest.useFakeTimers();
 
     it('should a page title', async () => {
-      const title = 'Random title';
+      const title = 'Alcjot';
 
       render(<Meta title={title} description="Random description" />);
 
