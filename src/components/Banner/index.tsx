@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Tooltip from '../Tooltip';
 
@@ -12,11 +12,39 @@ const WeChatImage = React.memo(() => (
 
 WeChatImage.displayName = 'WeChatImage';
 
+const hitsCall = async (
+  setCurrentHits: (hits: number) => void
+): Promise<void> => {
+  const hitsName = 'site-hits';
+
+  try {
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/hits?name=${hitsName}`, {
+      method: 'PUT',
+    });
+
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/hits?name=${hitsName}`
+    );
+
+    const json = await res.json();
+
+    setCurrentHits(json?.hits || 0);
+  } catch (error) {
+    console.error(`Error during /hits call: ${error?.message}`);
+  }
+};
+
 export default function Banner({
   handleThemeToggle,
 }: {
   handleThemeToggle: () => void;
 }) {
+  const [currentHits, setCurrentHits] = useState(0);
+
+  useEffect(() => {
+    hitsCall(setCurrentHits);
+  }, []);
+
   return (
     <section className="flex flex-col p-4 text-right md:px-6 md:py-2">
       <h2 className="mb-2 text-6xl font-extrabold leading-14 tracking-tight text-gray-900">
@@ -28,13 +56,14 @@ export default function Banner({
           HAPPY
         </span>
       </h2>
-      <p className="mb-3 text-gray-500 dark:text-gray-400">
-        Recording some drinks I have known. little jots makes life a bit
+      <p className="mb-3 text-gray-500">
+        Recording some drinks I have known. Little jots makes life a bit
         colourful ~~{' '}
         <span className="text-red-600">
           {'('}ATTENTION: THIS SITE IS FOR AGE 18+ !!{')'}
         </span>
       </p>
+      {currentHits > 0 && <p>Number Of HITS: {currentHits}</p>}
       <div className="flex w-full justify-end text-right">
         <Tooltip
           content={<WeChatImage />}

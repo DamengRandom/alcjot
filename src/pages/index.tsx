@@ -7,7 +7,7 @@ const Index = () => {
       meta={
         <Meta
           title="Alcjot"
-          description="A jot for recording some alcohol I have seen .."
+          description="A jot for recording some alcohols I have seen .."
         />
       }
     >

@@ -26,3 +26,10 @@ export interface IToken {
   id: string;
   token: string;
 }
+
+export interface IHits {
+  _id: string;
+  name: string;
+  hits: number;
+  __v: number;
+}

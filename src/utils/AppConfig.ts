@@ -32,6 +32,7 @@ export const initialBoozeFieldValues = {
 export const APIMessage = {
   Delete_200: (id: string) => `${id} has been removed from database 🚀🚀`,
   Delete_400: 'Delete failed, please try it again later ..',
+  General_Update_200: 'Updated ~~',
   General_400: (route: string) =>
     `Ooops, bad request on ${route}, please try it again ..`,
   General_401: 'Whoops, Unable to access ..',
