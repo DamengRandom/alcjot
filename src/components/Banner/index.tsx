@@ -63,7 +63,7 @@ export default function Banner({
           {'('}ATTENTION: THIS SITE IS FOR AGE 18+ !!{')'}
         </span>
       </p>
-      {currentHits > 0 && <p>Number Of HITS: {currentHits}</p>}
+      <p>{currentHits > 0 && `Totoal hits for Alcjot: ${currentHits}`}</p>
       <div className="flex w-full justify-end text-right">
         <Tooltip
           content={<WeChatImage />}

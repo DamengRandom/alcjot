@@ -11,29 +11,38 @@ connect(); // ensure connect to mongodb
 
 const sellHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const { body, method } = req;
+    const {
+      body,
+      method,
+      query: { title },
+    } = req;
     let product;
-    let products;
+    let response;
+    let filterByTitle;
 
     switch (method) {
       case 'POST':
+        body.time = new Date().toISOString();
         product = await (SellCollection as any).create(body as ISell);
 
         if (!product)
           return apiHandler(res, 400, {
-            error: APIMessage.General_400('/sell during creation'),
+            error: APIMessage.General_400('/sells during creation'),
           });
 
         return apiHandler(res, 201, product);
       case 'GET':
-        products = await (SellCollection as any).find();
+        filterByTitle = { title };
+        response = title
+          ? await (SellCollection as any).findOne(filterByTitle)
+          : await (SellCollection as any).find();
 
-        if (!products)
-          apiHandler(res, 400, {
-            error: APIMessage.General_404('/sell'),
+        if (!response)
+          return apiHandler(res, 404, {
+            error: APIMessage.General_404('/sells'),
           });
 
-        return apiHandler(res, 200, products);
+        return apiHandler(res, 200, response);
       default:
         return apiHandler(res, 405, APIMessage.General_405(method as string));
     }

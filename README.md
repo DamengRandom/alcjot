@@ -68,14 +68,15 @@ A jot for recording some alcohol I have seen ..
 57. https://blog.logrocket.com/lazy-loading-components-in-react-16-6-6cea535c0b52/
 58. https://polvara.me/posts/mocking-context-with-react-testing-library
 59. https://www.youtube.com/watch?v=8BrZeaw3sLQ
-60. 
+60. https://mongoosejs.com/docs/tutorials/findoneandupdate.html
+61. 
  -->
  
 <!-- My thoughts -->
 
 <!-- 
 1. animation for fade in and fdeout -> better with some movement from bottom to top?
-2. hits counter api addin
+2. 
 3. add some unit tests (test 2 useSates)
 4. price card add-in including with sell form build
 5. responsive display care

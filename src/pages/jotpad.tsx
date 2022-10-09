@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 
+import SellsForm from '@/components/SellsForm';
 import { getAccessToken, poster } from '@/utils/apiCaller';
 
 import { BoozeFields, initialBoozeFieldValues } from '../utils/AppConfig';
@@ -21,6 +22,7 @@ export default function Jotpad() {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     poster(`${process.env.NEXT_PUBLIC_BASE_URL}/boozes`, data);
   };
+
   const [states, setStates] = useState({
     loading: false,
     authenticated: false,
@@ -85,7 +87,7 @@ export default function Jotpad() {
           href={`${router.basePath}/favicon.ico`}
           key="favicon"
         />
-        <title>Alcjot JotPad | Create the alchol jot now</title>
+        <title>Alcjot FormPad | Create alchol jots & sell services</title>
       </Head>
       <section>
         <h3>Booze Form</h3>
@@ -95,14 +97,14 @@ export default function Jotpad() {
               <label>{field}: </label>
               {field !== 'description' ? (
                 <input
-                  {...register(field as any, {
+                  {...register(field, {
                     required: true,
                     maxLength: 100,
                   })}
                 />
               ) : (
                 <textarea
-                  {...register(field as any, {
+                  {...register(field, {
                     required: true,
                     maxLength: 800,
                   })}
@@ -137,16 +139,19 @@ export default function Jotpad() {
           )}
         </div>
       </section>
+      <hr />
       <section>
         <h3>Sell Form</h3>
+        <SellsForm />
       </section>
+      <hr />
       <section>
         <button onClick={logout}>Logout</button>
       </section>
     </>
   ) : (
     <>
-      <p>Whoops, seems like you do not have access for this page ..</p>
+      <p>Whoops, it seems like you do not have access for this page ..</p>
       <Link href="/verify">Login now ~~</Link>
     </>
   );

@@ -5,6 +5,14 @@ export const AlcjotConfigs = {
   locale: 'en',
 };
 
+export const SellFormFields = ['title', 'quantity', 'paylink'];
+
+export const initialSellFormFieldsValues = {
+  title: '',
+  quantity: 1,
+  paylink: '',
+};
+
 export const BoozeFields = [
   'type',
   'name',

@@ -59,7 +59,7 @@ export default function Verify() {
           href={`${router.basePath}/favicon.ico`}
           key="favicon"
         />
-        <title>Alcjot Verify | Login to starting jot creation jounrey</title>
+        <title>Alcjot Login | Jot Creation</title>
       </Head>
 
       <section className="flex h-screen w-full items-center justify-center">
