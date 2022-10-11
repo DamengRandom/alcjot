@@ -28,6 +28,7 @@ export default function Drink() {
 
   useEffect(() => {
     if (response) setCurrentResponse(response);
+    console.warn(response);
   }, [response]);
 
   const debouceSearch = useDebouce(searchText, 1000);
@@ -38,7 +39,9 @@ export default function Drink() {
 
   useEffect(() => {
     if (debouceSearch) {
-      const theResponse = response.filter((r: IBooze) => r.name === searchText); // search by name
+      const theResponse = response?.filter(
+        (r: IBooze) => r.name === searchText
+      ); // search by name
 
       setCurrentResponse(theResponse);
     }

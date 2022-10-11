@@ -69,15 +69,18 @@ A jot for recording some alcohol I have seen ..
 58. https://polvara.me/posts/mocking-context-with-react-testing-library
 59. https://www.youtube.com/watch?v=8BrZeaw3sLQ
 60. https://mongoosejs.com/docs/tutorials/findoneandupdate.html
-61. 
+61. https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+62. https://codepen.io/amitwalia23/pen/jrOVBL
+63. http://www.java2s.com/example/html-css/css/animate-div-from-top-to-middle-of-page-slide-to-bottom-right.html
+64. 
  -->
  
 <!-- My thoughts -->
 
 <!-- 
 1. animation for fade in and fdeout -> better with some movement from bottom to top?
-2. 
-3. add some unit tests (test 2 useSates)
-4. price card add-in including with sell form build
+2. fix the issue of cannot go back from jotpad page ..
+3. add api + utils unit tests
+4. lazy loading (routes?)
 5. responsive display care
  -->

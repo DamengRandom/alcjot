@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import numberWithCommas from '@/utils/numberWithComma';
+
 import Tooltip from '../Tooltip';
 
 const WeChatImage = React.memo(() => (
@@ -63,7 +65,10 @@ export default function Banner({
           {'('}ATTENTION: THIS SITE IS FOR AGE 18+ !!{')'}
         </span>
       </p>
-      <p>{currentHits > 0 && `Totoal hits for Alcjot: ${currentHits}`}</p>
+      <p>
+        {currentHits > 0 &&
+          `Totoal hits for Alcjot: ${numberWithCommas(currentHits)}`}
+      </p>
       <div className="flex w-full justify-end text-right">
         <Tooltip
           content={<WeChatImage />}

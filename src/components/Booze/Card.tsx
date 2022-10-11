@@ -13,7 +13,12 @@ export default function BoozeCard({
 
   return (
     <div className="max-w-sm break-inside-avoid overflow-auto shadow-lg">
-      <img className="w-full" src={image} alt={name} />
+      <img
+        data-testid="booze-image"
+        className="w-full"
+        src={image}
+        alt={name}
+      />
       <div className="px-6 py-4">
         <div className="mb-2 text-xl font-bold">{name}</div>
         <p className="text-base text-gray-700">From: {from}</p>
