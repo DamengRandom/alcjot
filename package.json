@@ -13,6 +13,7 @@
     "lint:fix": "next lint --fix",
     "check-types": "tsc --noEmit --pretty",
     "test": "jest --ci --forceExit --detectOpenHandles --maxWorkers=2 --no-cache --all --bail --watchAll=false --verbose",
+    "test:slient": "jest --silent",
     "prepare": "husky install"
   },
   "dependencies": {

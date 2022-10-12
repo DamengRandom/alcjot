@@ -82,9 +82,9 @@ A jot for recording some alcohol I have seen ..
 <!-- My thoughts -->
 
 <!-- 
-1. animation for fade in and fdeout -> better with some movement from bottom to top?
+1. 
 2. fix the issue of cannot go back from jotpad page ..
-3. add api + utils unit tests
+3. 
 4. lazy loading (routes?)
 5. responsive display care
  -->

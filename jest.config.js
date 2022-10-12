@@ -21,14 +21,14 @@ const customJestConfig = {
     '!**/*.d.ts',
     '!**/node_modules/**',
   ],
-  // coverageThreshold: {
-  //   global: {
-  //     branches: 5,
-  //     functions: 5,
-  //     lines: 5,
-  //     statements: 5,
-  //   },
-  // },
+  coverageThreshold: {
+    global: {
+      branches: 5,
+      functions: 5,
+      lines: 5,
+      statements: 5,
+    },
+  },
   setupFiles: [`<rootDir>/jest-shim.js`],
   testEnvironment: 'jest-environment-jsdom',
 };
