@@ -4,6 +4,8 @@ import React from 'react';
 
 import Drinks from '@/pages/drinks/[id]';
 
+import { defaultBoozes } from './mocks';
+
 jest.mock('../utils/apiCaller');
 
 jest.mock('react', () => ({
@@ -18,23 +20,6 @@ jest.mock('next/router', () => ({
     query: { id: 'brandy' },
   }),
 }));
-
-const defaultBoozes = [
-  {
-    capcity: 'Test5',
-    description: 'Test 7',
-    feel: 'Test6',
-    from: 'Test3',
-    image: 'https://test-image.png',
-    name: 'Test2',
-    price: 'Test8',
-    time: '2022-10-05T12:10:58.645Z',
-    type: 'Test1',
-    volume: 'Test4',
-    __v: 0,
-    _id: 'test_id',
-  },
-];
 
 describe('Drinks page Render method', () => {
   const setSearchText = jest.fn();

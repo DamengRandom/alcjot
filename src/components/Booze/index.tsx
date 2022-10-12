@@ -18,7 +18,7 @@ export default function Booze(booze: Partial<IBooze>) {
         <Card booze={booze} handleToggle={handleToggle} />
       </div>
       <div className={toggle ? 'fadeIn' : 'fadeOut'}>
-        <Modal booze={booze} handleToggle={handleToggle} />
+        <Modal booze={booze} handleToggle={handleToggle} toggle={toggle} />
       </div>
     </>
   );

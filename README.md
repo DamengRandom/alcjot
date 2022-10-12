@@ -72,7 +72,11 @@ A jot for recording some alcohol I have seen ..
 61. https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
 62. https://codepen.io/amitwalia23/pen/jrOVBL
 63. http://www.java2s.com/example/html-css/css/animate-div-from-top-to-middle-of-page-slide-to-bottom-right.html
-64. 
+64. https://stackoverflow.com/questions/36316862/how-to-get-a-div-to-slide-up-from-the-bottom-of-the-page-using-css
+65. https://stackoverflow.com/questions/73453641/referenceerror-textencoder-is-not-defined-with-mongoose-and-jest-and-typescript
+66. https://stackoverflow.com/questions/70156753/typeerror-0-mockingoose-default-is-not-a-function-mockingooose
+67. https://dev.to/zaklaughton/the-only-3-steps-you-need-to-mock-an-api-call-in-jest-39mb
+68. 
  -->
  
 <!-- My thoughts -->

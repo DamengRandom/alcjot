@@ -82,12 +82,18 @@
   transition: visibility 0s linear 0s, opacity 600ms;
 }
 
-.show {
-  display: block;
+.slider {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+  transition: all .4s;
+  position: absolute;
 }
 
-.hide {
-  display: none;
+.slider.close {
+  top: 100%;
+  height: 0;
 }
 
 @media only screen and (max-width: 768px) {

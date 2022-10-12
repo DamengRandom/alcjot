@@ -29,6 +29,7 @@ const customJestConfig = {
   //     statements: 5,
   //   },
   // },
+  setupFiles: [`<rootDir>/jest-shim.js`],
   testEnvironment: 'jest-environment-jsdom',
 };
 
