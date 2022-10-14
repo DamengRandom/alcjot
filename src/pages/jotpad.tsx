@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -128,10 +129,12 @@ export default function Jotpad() {
         <div>
           {BoozeFields.map((field) =>
             field === 'image' ? (
-              <img
+              <Image
                 key="booze-form-image-field"
                 src={watch('image')}
                 alt="image"
+                width={280}
+                height={280}
               />
             ) : (
               <p key={field}>{watch(field)}</p>

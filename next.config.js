@@ -6,4 +6,7 @@ module.exports = {
   trailingSlash: true,
   basePath: '',
   reactStrictMode: false,
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
 };

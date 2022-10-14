@@ -12,6 +12,7 @@ export default React.memo(function Footer() {
         Templated from{' '}
         <a href="https://creativedesignsguru.com">CreativeDesignsGuru{')'}</a>
       </span> */}
+      <span>(Beta 0.1.0)</span>
     </div>
   );
 });

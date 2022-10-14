@@ -96,8 +96,27 @@
   height: 0;
 }
 
+#boozeCard {}
+
 @media only screen and (max-width: 768px) {
   .hide-section {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #boozeCard {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #boozeCard .max-w-sm,
+  #boozeCard .max-w-sm > span {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
   }
 }

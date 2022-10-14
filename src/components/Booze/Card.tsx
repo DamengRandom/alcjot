@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 import type { IBooze } from '@/types/common';
@@ -13,10 +14,12 @@ export default function BoozeCard({
 
   return (
     <div className="max-w-sm break-inside-avoid overflow-auto shadow-lg">
-      <img
+      <Image
+        width={288}
+        height={178}
         data-testid="booze-image"
         className="w-full"
-        src={image}
+        src={image || ''}
         alt={name}
       />
       <div className="px-6 py-4">

@@ -81,7 +81,10 @@ export default function Drink() {
             <i className="mt-2 pl-2 text-xl">({id})</i>
           </div>
         </Nav>
-        <div className="mx-auto w-[1200px] columns-4 gap-4 space-y-4 pb-4">
+        <div
+          id="boozeCard"
+          className="mx-auto w-[1200px] columns-4 gap-4 space-y-4 pb-4"
+        >
           {currentResponse.map((r: IBooze) => (
             <Booze key={r.name} {...r} />
           ))}

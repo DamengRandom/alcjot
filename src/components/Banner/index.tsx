@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 import numberWithCommas from '@/utils/numberWithComma';
@@ -5,10 +6,13 @@ import numberWithCommas from '@/utils/numberWithComma';
 import Tooltip from '../Tooltip';
 
 const WeChatImage = React.memo(() => (
-  <img
-    className="h-32 w-32 max-w-fit"
+  <Image
+    width={128}
+    height={128}
+    className="max-w-fit"
     src="https://res.cloudinary.com/dameng/image/upload/v1664099747/me-wechat_w29nwq.jpg"
     alt="Damon0503"
+    layout="responsive"
   />
 ));
 

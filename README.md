@@ -76,15 +76,16 @@ A jot for recording some alcohol I have seen ..
 65. https://stackoverflow.com/questions/73453641/referenceerror-textencoder-is-not-defined-with-mongoose-and-jest-and-typescript
 66. https://stackoverflow.com/questions/70156753/typeerror-0-mockingoose-default-is-not-a-function-mockingooose
 67. https://dev.to/zaklaughton/the-only-3-steps-you-need-to-mock-an-api-call-in-jest-39mb
-68. 
+68. https://stackoverflow.com/questions/57712235/referenceerror-textencoder-is-not-defined-when-running-react-scripts-test
+69. 
  -->
  
 <!-- My thoughts -->
 
 <!-- 
 1. 
-2. fix the issue of cannot go back from jotpad page ..
+2.
 3. 
-4. lazy loading (routes?)
+4. 
 5. responsive display care
  -->

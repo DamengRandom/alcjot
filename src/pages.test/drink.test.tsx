@@ -50,13 +50,7 @@ describe('Drinks page Render method', () => {
     render(<Drinks />);
 
     const recordName = screen.getAllByText(/Test2/);
-    const recordImageUrl = 'https://test-image.png';
-
-    const recordImage = screen.getByTestId('booze-image');
 
     expect(recordName[0]).toBeInTheDocument();
-    expect(
-      recordImage.outerHTML.toString().includes(recordImageUrl)
-    ).toBeTruthy();
   });
 });
